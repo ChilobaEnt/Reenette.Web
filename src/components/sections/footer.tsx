@@ -4,20 +4,20 @@ import { Input } from '@/components/ui/input';
 
 const footerLinks = {
   destinations: [
-    'Asia & Pacific',
-    'Europe',
-    'Africa',
-    'South America',
-    'North America',
-    'Antarctica'
+    'Maasai Mara',
+    'Amboseli National Park',
+    'Mount Kenya',
+    'Tsavo East & West',
+    'Lake Nakuru',
+    'Samburu National Reserve'
   ],
-  company: [
-    'About Us',
-    'Our Team',
-    'Careers',
-    'Press',
-    'Sustainability',
-    'Reviews'
+  services: [
+    'Safari Tours',
+    'Golf Tours',
+    'Hotel Bookings',
+    'Airport Transfers',
+    'Guided Tours',
+    'Cultural Experiences'
   ],
   support: [
     'Help Center',
@@ -73,31 +73,31 @@ export function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
               <Plane className="h-8 w-8 text-accent" />
-              <span className="text-2xl font-bold">Wanderlust</span>
+              <span className="text-2xl font-bold">Reenette Tours</span>
             </div>
             <p className="mb-6 opacity-90 leading-relaxed">
-              Creating extraordinary travel experiences that inspire, transform, and connect 
-              people with the world's most amazing destinations since 1999.
+              Reenette Tours and Travel Ltd. is a premier East African specialty safari provider 
+              offering personalized, unforgettable travel experiences across Kenya since 1999.
             </p>
             <div className="space-y-3">
               <div className="flex items-center">
                 <MapPin className="h-5 w-5 mr-3 text-accent" />
-                <span>123 Adventure Street, Travel City, TC 12345</span>
+                <span>Nairobi, Kenya</span>
               </div>
               <div className="flex items-center">
                 <Phone className="h-5 w-5 mr-3 text-accent" />
-                <span>+1 (555) 123-4567</span>
+                <span>+254 712 345 678 (WhatsApp)</span>
               </div>
               <div className="flex items-center">
                 <Mail className="h-5 w-5 mr-3 text-accent" />
-                <span>hello@wanderlust.com</span>
+                <span>info@reenettetours.com</span>
               </div>
             </div>
           </div>
 
           {/* Destinations */}
           <div>
-            <h4 className="font-bold text-lg mb-4">Destinations</h4>
+            <h4 className="font-bold text-lg mb-4">Safari Destinations</h4>
             <ul className="space-y-2">
               {footerLinks.destinations.map((link) => (
                 <li key={link}>
@@ -114,9 +114,9 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h4 className="font-bold text-lg mb-4">Company</h4>
+            <h4 className="font-bold text-lg mb-4">Our Services</h4>
             <ul className="space-y-2">
-              {footerLinks.company.map((link) => (
+              {footerLinks.services.map((link) => (
                 <li key={link}>
                   <a
                     href="#"
@@ -166,8 +166,8 @@ export function Footer() {
               })}
             </div>
             <div className="text-sm opacity-80 text-center md:text-right">
-              <p>&copy; 2024 Wanderlust Travel Company. All rights reserved.</p>
-              <p className="mt-1">ATTA Member | IATA Certified | Fully Bonded</p>
+              <p>&copy; 2025 Reenette Tours and Travel Ltd. All rights reserved.</p>
+              <p className="mt-1">Licensed Kenya Tour Operator | Fully Bonded | KATA Member</p>
             </div>
           </div>
         </div>

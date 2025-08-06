@@ -8,7 +8,7 @@ All colors MUST be HSL for perfect theming.
 
 @layer base {
   :root {
-    /* Base colors inspired by natural landscapes */
+    /* Reenette brand colors - warm African earth tones */
     --background: 28 25% 97%;
     --foreground: 25 25% 15%;
 
@@ -19,12 +19,12 @@ All colors MUST be HSL for perfect theming.
     --popover: 0 0% 100%;
     --popover-foreground: 25 25% 15%;
 
-    /* Adventure blue - deep ocean/sky inspired */
-    --primary: 208 85% 25%;
+    /* Reenette primary - rich African brown */
+    --primary: 25 58% 27%;
     --primary-foreground: 0 0% 98%;
-    --primary-glow: 208 75% 45%;
+    --primary-glow: 25 45% 45%;
 
-    /* Warm earth secondary - sandstone/terracotta */
+    /* Warm earth secondary - lighter brown */
     --secondary: 25 35% 85%;
     --secondary-foreground: 25 50% 25%;
 
@@ -32,8 +32,8 @@ All colors MUST be HSL for perfect theming.
     --muted: 28 15% 92%;
     --muted-foreground: 25 15% 55%;
 
-    /* Sunset accent - warm adventure orange */
-    --accent: 32 95% 65%;
+    /* Safari accent - warm gold/amber */
+    --accent: 45 95% 58%;
     --accent-foreground: 25 50% 15%;
 
     --destructive: 0 84.2% 60.2%;
@@ -42,7 +42,7 @@ All colors MUST be HSL for perfect theming.
     /* Subtle borders and inputs */
     --border: 28 20% 88%;
     --input: 28 20% 88%;
-    --ring: 208 85% 25%;
+    --ring: 25 58% 27%;
 
     --radius: 0.5rem;
 
@@ -64,7 +64,7 @@ All colors MUST be HSL for perfect theming.
   }
 
   .dark {
-    /* Dark mode with deep adventure tones */
+    /* Dark mode with deep African earth tones */
     --background: 25 35% 8%;
     --foreground: 28 25% 95%;
 
@@ -74,10 +74,10 @@ All colors MUST be HSL for perfect theming.
     --popover: 25 35% 12%;
     --popover-foreground: 28 25% 95%;
 
-    /* Bright adventure blue for dark mode */
-    --primary: 208 85% 55%;
+    /* Bright safari gold for dark mode */
+    --primary: 25 58% 55%;
     --primary-foreground: 25 35% 8%;
-    --primary-glow: 208 75% 35%;
+    --primary-glow: 25 45% 35%;
 
     /* Warm secondary in dark */
     --secondary: 25 25% 18%;
@@ -86,8 +86,8 @@ All colors MUST be HSL for perfect theming.
     --muted: 25 25% 15%;
     --muted-foreground: 28 15% 65%;
 
-    /* Vibrant sunset accent */
-    --accent: 32 95% 55%;
+    /* Vibrant gold accent */
+    --accent: 45 95% 68%;
     --accent-foreground: 25 35% 8%;
 
     --destructive: 0 75% 55%;
@@ -95,7 +95,7 @@ All colors MUST be HSL for perfect theming.
 
     --border: 25 25% 20%;
     --input: 25 25% 20%;
-    --ring: 208 85% 55%;
+    --ring: 25 58% 55%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -118,11 +118,11 @@ All colors MUST be HSL for perfect theming.
 
   /* Custom properties for advanced styling */
   :root {
-    /* Beautiful gradients for tourism appeal */
+    /* Beautiful gradients for African safari appeal */
     --gradient-hero: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 50%, hsl(var(--accent)) 100%);
-    --gradient-sunset: linear-gradient(to right, hsl(var(--accent)) 0%, hsl(32 85% 55%) 50%, hsl(15 85% 65%) 100%);
-    --gradient-ocean: linear-gradient(to bottom, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
-    --gradient-overlay: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.1));
+    --gradient-sunset: linear-gradient(to right, hsl(var(--accent)) 0%, hsl(45 85% 55%) 50%, hsl(35 85% 65%) 100%);
+    --gradient-savanna: linear-gradient(to bottom, hsl(var(--primary)) 0%, hsl(var(--primary-glow)) 100%);
+    --gradient-overlay: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.1));
     
     /* Elegant shadows */
     --shadow-adventure: 0 25px 50px -12px hsl(var(--primary) / 0.25);

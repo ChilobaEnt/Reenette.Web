@@ -6,34 +6,34 @@ const experiences = [
   {
     icon: Compass,
     title: 'Expert Guidance',
-    description: 'Our experienced travel experts craft personalized itineraries that match your dreams and exceed your expectations.',
+    description: 'Our experienced safari guides and golf professionals ensure authentic East African experiences.',
     badge: '25+ Years'
   },
   {
     icon: Users,
-    title: 'Small Groups',
-    description: 'Intimate group sizes ensure personalized attention and authentic connections with local cultures.',
-    badge: 'Max 16 People'
+    title: 'Personalized Service',
+    description: 'Tailored safari and golf tours designed to match your interests and preferences.',
+    badge: 'Custom Tours'
   },
   {
     icon: Award,
-    title: 'Award Winning',
-    description: 'Recognized globally for excellence in sustainable tourism and unforgettable travel experiences.',
-    badge: 'Top Rated'
+    title: 'Local Expertise',
+    description: 'Deep knowledge of Kenya\'s wildlife, culture, and premier golf destinations.',
+    badge: 'Kenya Specialists'
   },
   {
     icon: Shield,
-    title: 'Fully Protected',
-    description: 'Travel with confidence knowing you\'re covered by comprehensive insurance and 24/7 support.',
-    badge: '100% Secure'
+    title: 'Fully Licensed',
+    description: 'Licensed tour operator with comprehensive insurance and 24/7 support throughout Kenya.',
+    badge: '100% Licensed'
   }
 ];
 
 const stats = [
-  { number: '50+', label: 'Destinations' },
-  { number: '10K+', label: 'Happy Travelers' },
-  { number: '500+', label: 'Adventures' },
-  { number: '98%', label: 'Satisfaction Rate' }
+  { number: '15+', label: 'Safari Destinations' },
+  { number: '12+', label: 'Golf Courses' },
+  { number: '5,000+', label: 'Happy Travelers' },
+  { number: '99%', label: 'Satisfaction Rate' }
 ];
 
 export function ExperienceSection() {
@@ -45,12 +45,12 @@ export function ExperienceSection() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Why Choose{' '}
             <span className="bg-gradient-sunset bg-clip-text text-transparent">
-              Wanderlust
+              Reenette Tours
             </span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            We don't just plan trips – we craft extraordinary journeys that transform 
-            perspectives and create lifelong memories.
+            As a premier East African specialty safari provider, we create personalized, 
+            unforgettable travel experiences across Kenya's most spectacular destinations.
           </p>
         </div>
 

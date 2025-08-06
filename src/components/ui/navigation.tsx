@@ -12,8 +12,8 @@ export function Navigation({ className }: NavigationProps) {
 
   const navItems = [
     { label: 'Home', href: '#home' },
-    { label: 'Destinations', href: '#destinations' },
-    { label: 'Tours', href: '#tours' },
+    { label: 'Safari Tours', href: '#safari' },
+    { label: 'Golf Tours', href: '#golf' },
     { label: 'About', href: '#about' },
     { label: 'Contact', href: '#contact' }
   ];
@@ -29,7 +29,7 @@ export function Navigation({ className }: NavigationProps) {
           <div className="flex items-center space-x-2">
             <Plane className="h-8 w-8 text-primary" />
             <span className="text-xl md:text-2xl font-bold text-primary">
-              Wanderlust
+              Reenette Tours
             </span>
           </div>
 

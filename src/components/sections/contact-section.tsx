@@ -11,25 +11,25 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email Us',
-    value: 'hello@wanderlust.com',
+    value: 'info@reenettetours.com',
     description: 'Get answers to your questions'
   },
   {
     icon: Phone,
-    title: 'Call Us',
-    value: '+1 (555) 123-4567',
-    description: 'Speak to our travel experts'
+    title: 'WhatsApp Us',
+    value: '+254 712 345 678',
+    description: 'Speak to our safari experts'
   },
   {
     icon: MapPin,
-    title: 'Visit Us',
-    value: '123 Adventure Street, Travel City',
-    description: 'Meet us in person'
+    title: 'Visit Kenya',
+    value: 'Nairobi, Kenya',
+    description: 'Explore East Africa with us'
   },
   {
     icon: Clock,
     title: 'Office Hours',
-    value: 'Mon - Fri: 9AM - 6PM',
+    value: 'Mon - Fri: 8AM - 6PM EAT',
     description: 'We\'re here to help'
   }
 ];

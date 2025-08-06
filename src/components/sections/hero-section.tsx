@@ -2,42 +2,42 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
 import heroMountain from '@/assets/hero-mountain.jpg';
-import beachParadise from '@/assets/beach-paradise.jpg';
-import templeHeritage from '@/assets/temple-heritage.jpg';
-import safariAdventure from '@/assets/safari-adventure.jpg';
+import kenyaSafari from '@/assets/kenya-safari.jpg';
+import kenyaGolf from '@/assets/kenya-golf.jpg';
+import safariExperience from '@/assets/safari-experience.jpg';
 
 const heroSlides = [
   {
     id: 1,
-    image: heroMountain,
-    title: 'Experience the Extraordinary',
-    subtitle: 'Discover breathtaking landscapes and unforgettable adventures',
-    location: 'Patagonia, Chile',
-    cta: 'Explore Mountains'
+    image: kenyaSafari,
+    title: 'Journey of a Lifetime',
+    subtitle: 'Experience the magic of East African safaris with expert guides',
+    location: 'Maasai Mara, Kenya',
+    cta: 'Explore Safari Tours'
   },
   {
     id: 2,
-    image: beachParadise,
-    title: 'Paradise Awaits',
-    subtitle: 'Crystal clear waters and pristine beaches call your name',
-    location: 'Maldives',
-    cta: 'Discover Islands'
+    image: kenyaGolf,
+    title: 'Championship Golf',
+    subtitle: 'Play on Kenya\'s most prestigious golf courses in stunning settings',
+    location: 'Karen Country Club',
+    cta: 'Book Golf Tour'
   },
   {
     id: 3,
-    image: templeHeritage,
-    title: 'Journey Through Time',
-    subtitle: 'Ancient cultures and timeless beauty await exploration',
-    location: 'Angkor Wat, Cambodia',
-    cta: 'Explore Heritage'
+    image: safariExperience,
+    title: 'Authentic Adventures',
+    subtitle: 'Personalized travel experiences across Kenya\'s wilderness',
+    location: 'Amboseli National Park',
+    cta: 'Plan Your Safari'
   },
   {
     id: 4,
-    image: safariAdventure,
-    title: 'Wild Adventures',
-    subtitle: 'Experience the raw beauty of untamed wilderness',
-    location: 'Serengeti, Tanzania',
-    cta: 'Safari Experience'
+    image: heroMountain,
+    title: 'Unforgettable Moments',
+    subtitle: 'From game drives to cultural encounters, create lasting memories',
+    location: 'Mount Kenya Region',
+    cta: 'Discover Kenya'
   }
 ];
 
