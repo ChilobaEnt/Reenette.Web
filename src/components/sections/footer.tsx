@@ -1,0 +1,177 @@
+import { Plane, Facebook, Instagram, Twitter, Youtube, Mail, MapPin, Phone } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+
+const footerLinks = {
+  destinations: [
+    'Asia & Pacific',
+    'Europe',
+    'Africa',
+    'South America',
+    'North America',
+    'Antarctica'
+  ],
+  company: [
+    'About Us',
+    'Our Team',
+    'Careers',
+    'Press',
+    'Sustainability',
+    'Reviews'
+  ],
+  support: [
+    'Help Center',
+    'Travel Insurance',
+    'Booking Terms',
+    'Privacy Policy',
+    'Cookie Policy',
+    'Contact Support'
+  ]
+};
+
+const socialLinks = [
+  { icon: Facebook, href: '#', label: 'Facebook' },
+  { icon: Instagram, href: '#', label: 'Instagram' },
+  { icon: Twitter, href: '#', label: 'Twitter' },
+  { icon: Youtube, href: '#', label: 'YouTube' }
+];
+
+export function Footer() {
+  return (
+    <footer className="bg-primary text-primary-foreground">
+      {/* Newsletter Section */}
+      <div className="border-b border-primary-foreground/10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+          <div className="max-w-2xl mx-auto text-center">
+            <h3 className="text-2xl font-bold mb-4">
+              Stay Inspired
+            </h3>
+            <p className="mb-6 opacity-90">
+              Get travel tips, destination guides, and exclusive offers delivered to your inbox.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+              <Input
+                type="email"
+                placeholder="Your email address"
+                className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60"
+              />
+              <Button
+                variant="secondary"
+                className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-glow"
+              >
+                Subscribe
+              </Button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Main Footer Content */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+          {/* Brand Section */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center space-x-2 mb-6">
+              <Plane className="h-8 w-8 text-accent" />
+              <span className="text-2xl font-bold">Wanderlust</span>
+            </div>
+            <p className="mb-6 opacity-90 leading-relaxed">
+              Creating extraordinary travel experiences that inspire, transform, and connect 
+              people with the world's most amazing destinations since 1999.
+            </p>
+            <div className="space-y-3">
+              <div className="flex items-center">
+                <MapPin className="h-5 w-5 mr-3 text-accent" />
+                <span>123 Adventure Street, Travel City, TC 12345</span>
+              </div>
+              <div className="flex items-center">
+                <Phone className="h-5 w-5 mr-3 text-accent" />
+                <span>+1 (555) 123-4567</span>
+              </div>
+              <div className="flex items-center">
+                <Mail className="h-5 w-5 mr-3 text-accent" />
+                <span>hello@wanderlust.com</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Destinations */}
+          <div>
+            <h4 className="font-bold text-lg mb-4">Destinations</h4>
+            <ul className="space-y-2">
+              {footerLinks.destinations.map((link) => (
+                <li key={link}>
+                  <a
+                    href="#"
+                    className="opacity-80 hover:opacity-100 hover:text-accent transition-all duration-300"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="font-bold text-lg mb-4">Company</h4>
+            <ul className="space-y-2">
+              {footerLinks.company.map((link) => (
+                <li key={link}>
+                  <a
+                    href="#"
+                    className="opacity-80 hover:opacity-100 hover:text-accent transition-all duration-300"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Support */}
+          <div>
+            <h4 className="font-bold text-lg mb-4">Support</h4>
+            <ul className="space-y-2">
+              {footerLinks.support.map((link) => (
+                <li key={link}>
+                  <a
+                    href="#"
+                    className="opacity-80 hover:opacity-100 hover:text-accent transition-all duration-300"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Social Media */}
+        <div className="mt-12 pt-8 border-t border-primary-foreground/10">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex space-x-6 mb-6 md:mb-0">
+              {socialLinks.map((social) => {
+                const IconComponent = social.icon;
+                return (
+                  <a
+                    key={social.label}
+                    href={social.href}
+                    className="w-10 h-10 bg-primary-foreground/10 rounded-full flex items-center justify-center hover:bg-accent hover:text-accent-foreground transition-all duration-300 transform hover:scale-110"
+                    aria-label={social.label}
+                  >
+                    <IconComponent className="h-5 w-5" />
+                  </a>
+                );
+              })}
+            </div>
+            <div className="text-sm opacity-80 text-center md:text-right">
+              <p>&copy; 2024 Wanderlust Travel Company. All rights reserved.</p>
+              <p className="mt-1">ATTA Member | IATA Certified | Fully Bonded</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}
