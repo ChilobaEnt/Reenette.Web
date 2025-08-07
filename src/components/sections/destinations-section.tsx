@@ -79,11 +79,6 @@ export function DestinationsSection() {
                     {destination.duration}
                   </Badge>
                 </div>
-                <div className="absolute top-4 right-4">
-                  <Badge className="bg-accent text-accent-foreground">
-                    {destination.price}
-                  </Badge>
-                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               </div>
 
@@ -122,6 +117,7 @@ export function DestinationsSection() {
                 <Button 
                   className="w-full group-hover:shadow-glow transition-all duration-300"
                   variant="default"
+                  onClick={() => window.location.href = '#contact'}
                 >
                   Explore Destination
                 </Button>
@@ -136,6 +132,7 @@ export function DestinationsSection() {
             variant="outline"
             size="lg"
             className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+            onClick={() => window.location.href = '#contact'}
           >
             View All Destinations
           </Button>

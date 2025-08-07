@@ -101,6 +101,7 @@ export function HeroSection() {
                 <Button 
                   size="lg" 
                   className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-glow transition-all duration-300 transform hover:scale-105"
+                  onClick={() => window.location.href = index === 0 || index === 2 ? '#safari' : '#golf'}
                 >
                   {slide.cta}
                 </Button>
@@ -108,6 +109,7 @@ export function HeroSection() {
                   variant="outline" 
                   size="lg"
                   className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
+                  onClick={() => window.location.href = '#destinations'}
                 >
                   View Gallery
                 </Button>

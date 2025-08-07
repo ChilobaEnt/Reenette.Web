@@ -89,11 +89,6 @@ export function GolfSection() {
                     {tour.duration}
                   </Badge>
                 </div>
-                <div className="absolute top-4 right-4">
-                  <Badge className="bg-accent text-accent-foreground">
-                    {tour.price}
-                  </Badge>
-                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               </div>
 
@@ -132,6 +127,7 @@ export function GolfSection() {
                 <Button 
                   className="w-full group-hover:shadow-glow transition-all duration-300"
                   variant="default"
+                  onClick={() => window.location.href = '#contact'}
                 >
                   <Trophy className="h-4 w-4 mr-2" />
                   Book Golf Tour
