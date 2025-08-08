@@ -2,6 +2,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { MapPin, Star, Clock, Trophy, Calendar, Users } from 'lucide-react';
+import { GolfToursModal } from './golf-tours-modal';
 import kenyaGolf from '@/assets/kenya-golf.jpg';
 import beachParadise from '@/assets/beach-paradise.jpg';
 import templeHeritage from '@/assets/temple-heritage.jpg';
@@ -135,6 +136,19 @@ export function GolfSection() {
               </CardContent>
             </Card>
           ))}
+        </div>
+
+        {/* See More Button */}
+        <div className="text-center mb-16">
+          <GolfToursModal>
+            <Button 
+              variant="outline"
+              size="lg"
+              className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+            >
+              See More Golf Tours
+            </Button>
+          </GolfToursModal>
         </div>
 
         {/* Golf Clubs Directory */}
