@@ -14,7 +14,6 @@ const safariTours = [
     image: kenyaSafari,
     rating: 4.9,
     duration: '5 days',
-    price: 'From $1,899',
     description: 'Witness the Great Migration and encounter the Big Five in Kenya\'s most famous reserve.',
     highlights: ['Big Five Viewing', 'Great Migration', 'Maasai Culture', 'Game Drives']
   },
@@ -25,7 +24,6 @@ const safariTours = [
     image: safariExperience,
     rating: 4.8,
     duration: '4 days',
-    price: 'From $1,499',
     description: 'Experience close encounters with elephants against the backdrop of Mount Kilimanjaro.',
     highlights: ['Elephant Herds', 'Mt. Kilimanjaro Views', 'Birdwatching', 'Photography']
   },
@@ -36,7 +34,6 @@ const safariTours = [
     image: heroMountain,
     rating: 4.7,
     duration: '6 days',
-    price: 'From $2,299',
     description: 'Combine wildlife viewing with mountain adventures in Kenya\'s highest peak region.',
     highlights: ['Mountain Views', 'Diverse Wildlife', 'Hiking Trails', 'Cultural Sites']
   }

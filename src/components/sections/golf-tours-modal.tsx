@@ -13,7 +13,6 @@ const internationalTours = [
     location: 'St. Andrews & Edinburgh',
     duration: '7 days',
     rating: 4.9,
-    price: 'From $3,899',
     description: 'Play the legendary Old Course at St. Andrews and experience Scottish golf heritage.',
     highlights: ['Old Course St. Andrews', 'Royal Mile Edinburgh', 'Highland Whisky', 'Castle Tours'],
     image: 'https://images.unsplash.com/photo-1551698618-1dfe5d97d256?w=400&h=250&fit=crop'
@@ -24,7 +23,6 @@ const internationalTours = [
     location: 'Marbella & Sotogrande',
     duration: '5 days',
     rating: 4.8,
-    price: 'From $2,599',
     description: 'Mediterranean luxury golf with championship courses and beach resorts.',
     highlights: ['Championship Courses', 'Mediterranean Cuisine', 'Luxury Resorts', 'Beach Access'],
     image: 'https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?w=400&h=250&fit=crop'
@@ -35,7 +33,6 @@ const internationalTours = [
     location: 'Cork & Dublin',
     duration: '6 days',
     rating: 4.7,
-    price: 'From $3,199',
     description: 'Experience dramatic links courses along Ireland\'s stunning coastline.',
     highlights: ['Links Courses', 'Irish Culture', 'Dublin City', 'Traditional Pubs'],
     image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop'
@@ -49,7 +46,6 @@ const localTours = [
     location: 'Kampala & Entebbe',
     duration: '4 days',
     rating: 4.6,
-    price: 'From $1,299',
     description: 'Combine golf with gorilla trekking in the Pearl of Africa.',
     highlights: ['Gorilla Trekking', 'Lake Victoria', 'Kampala Golf Club', 'Cultural Tours'],
     image: 'https://images.unsplash.com/photo-1547970810-dc1eacd77b8b?w=400&h=250&fit=crop'
@@ -60,7 +56,6 @@ const localTours = [
     location: 'Arusha & Moshi',
     duration: '5 days',
     rating: 4.5,
-    price: 'From $1,599',
     description: 'Golf with Mount Kilimanjaro views and Serengeti safari experience.',
     highlights: ['Kilimanjaro Views', 'Serengeti Access', 'Coffee Plantations', 'Maasai Culture'],
     image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=400&h=250&fit=crop'
@@ -71,7 +66,6 @@ const localTours = [
     location: 'Kigali',
     duration: '3 days',
     rating: 4.4,
-    price: 'From $899',
     description: 'Play golf in the land of a thousand hills with exceptional hospitality.',
     highlights: ['Kigali Golf Club', 'Genocide Memorial', 'Coffee Tours', 'Mountain Views'],
     image: 'https://images.unsplash.com/photo-1473789810014-375ed569d0ed?w=400&h=250&fit=crop'
@@ -134,8 +128,7 @@ export function GolfToursModal({ children }: GolfToursModalProps) {
           ))}
         </div>
 
-        <div className="flex items-center justify-between">
-          <span className="font-bold text-accent">{tour.price}</span>
+        <div className="flex justify-end">
           <Button 
             size="sm"
             className="hover:shadow-glow transition-all duration-300"

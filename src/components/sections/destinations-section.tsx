@@ -14,7 +14,6 @@ const destinations = [
     image: beachParadise,
     rating: 4.9,
     duration: '7 days',
-    price: 'From $2,999',
     description: 'Pristine beaches, crystal-clear waters, and luxury overwater villas await.',
     highlights: ['Overwater Villa', 'Snorkeling', 'Spa Resort']
   },
@@ -25,7 +24,6 @@ const destinations = [
     image: templeHeritage,
     rating: 4.8,
     duration: '10 days',
-    price: 'From $1,899',
     description: 'Explore magnificent temples and immerse yourself in rich cultural heritage.',
     highlights: ['Angkor Wat', 'Local Culture', 'Photography']
   },
@@ -36,7 +34,6 @@ const destinations = [
     image: safariAdventure,
     rating: 4.9,
     duration: '12 days',
-    price: 'From $3,499',
     description: 'Witness the Great Migration and experience Africa\'s incredible wildlife.',
     highlights: ['Big Five', 'Luxury Camps', 'Game Drives']
   }

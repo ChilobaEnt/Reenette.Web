@@ -15,7 +15,6 @@ const golfTours = [
     image: kenyaGolf,
     rating: 4.9,
     duration: '3 days',
-    price: 'From $899',
     description: 'Play at one of Kenya\'s most prestigious golf clubs with stunning views and championship course.',
     highlights: ['Championship Course', 'Club Facilities', 'Professional Caddie', 'Luxury Accommodation']
   },
@@ -26,7 +25,6 @@ const golfTours = [
     image: beachParadise,
     rating: 4.8,
     duration: '5 days',
-    price: 'From $1,599',
     description: 'Combine golf with beach relaxation at Kenya\'s premier coastal golf destinations.',
     highlights: ['Ocean Views', 'Beach Resort', 'Two Courses', 'Spa & Wellness']
   },
@@ -37,7 +35,6 @@ const golfTours = [
     image: templeHeritage,
     rating: 4.7,
     duration: '4 days',
-    price: 'From $1,299',
     description: 'Experience golf in Kenya\'s beautiful highlands with historic clubs and scenic courses.',
     highlights: ['Historic Clubs', 'Mountain Views', 'Colonial Heritage', 'Fine Dining']
   }
