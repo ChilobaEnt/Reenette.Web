@@ -35,7 +35,7 @@ const internationalTours = [
     rating: 4.7,
     description: 'Experience dramatic links courses along Ireland\'s stunning coastline.',
     highlights: ['Links Courses', 'Irish Culture', 'Dublin City', 'Traditional Pubs'],
-    image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=250&fit=crop'
+    image: 'https://images.unsplash.com/photo-1551526826-b2bb53a6de96?w=400&h=250&fit=crop'
   }
 ];
 
