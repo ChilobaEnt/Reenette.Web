@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { MapPin, Star, Clock, Trophy, Calendar, Users } from 'lucide-react';
 import { GolfToursModal } from './golf-tours-modal';
-import { GolfMap } from '@/components/ui/golf-map';
+
 import kenyaGolf from '@/assets/kenya-golf.jpg';
 import beachParadise from '@/assets/beach-paradise.jpg';
 import templeHeritage from '@/assets/temple-heritage.jpg';
@@ -149,18 +149,6 @@ export function GolfSection() {
           </GolfToursModal>
         </div>
 
-        {/* Golf Courses Map */}
-        <div className="mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl md:text-3xl font-bold mb-4">
-              Explore Golf Courses
-            </h3>
-            <p className="text-muted-foreground">
-              Interactive map showing Kenya's premier golf destinations
-            </p>
-          </div>
-          <GolfMap className="w-full" />
-        </div>
 
         {/* Golf Clubs Directory */}
         <div className="bg-primary rounded-2xl p-8 md:p-12 shadow-adventure mb-12">
