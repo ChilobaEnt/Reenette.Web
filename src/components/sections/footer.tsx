@@ -1,4 +1,4 @@
-import { Plane, Facebook, Instagram, Twitter, Youtube, Mail, MapPin, Phone } from 'lucide-react';
+import { Plane, Instagram, Twitter, Mail, MapPin, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -30,10 +30,8 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Facebook, href: '#', label: 'Facebook' },
   { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
-  { icon: Youtube, href: '#', label: 'YouTube' }
+  { icon: Twitter, href: '#', label: 'Twitter' }
 ];
 
 export function Footer() {
