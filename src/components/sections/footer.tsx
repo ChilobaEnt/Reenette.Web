@@ -30,8 +30,8 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Twitter, href: '#', label: 'Twitter' }
+  { icon: Instagram, href: 'https://instagram.com/reenette_toursntravel', label: 'Instagram' },
+  { icon: Twitter, href: 'https://twitter.com/reenette_toursntravel', label: 'Twitter' }
 ];
 
 export function Footer() {
