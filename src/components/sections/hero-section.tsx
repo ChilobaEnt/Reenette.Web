@@ -24,14 +24,6 @@ const heroSlides = [
     cta: 'Book Golf Tour'
   },
   {
-    id: 3,
-    image: safariExperience,
-    title: 'Authentic Adventures',
-    subtitle: 'Personalized travel experiences across Kenya\'s wilderness',
-    location: 'Amboseli National Park',
-    cta: 'Plan Your Safari'
-  },
-  {
     id: 4,
     image: heroMountain,
     title: 'Unforgettable Moments',
