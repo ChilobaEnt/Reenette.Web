@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Plane } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import reenetteLogo from '@/assets/reenette-logo.png';
 
 interface NavigationProps {
   className?: string;
@@ -27,7 +28,7 @@ export function Navigation({ className }: NavigationProps) {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <Plane className="h-8 w-8 text-primary" />
+            <img src={reenetteLogo} alt="Reenette Tours Logo" className="h-8 w-8" />
             <span className="text-xl md:text-2xl font-bold text-primary">
               Reenette Tours
             </span>
