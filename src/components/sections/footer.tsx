@@ -33,7 +33,7 @@ const footerLinks = {
 };
 
 const socialLinks = [
-  { icon: Instagram, href: 'https://instagram.com/reenette_toursntravel', label: 'Instagram' },
+  { icon: Instagram, href: 'https://www.instagram.com/reenette_toursntravel?igsh=MW9qbWJsZTBsdmhzZQ==', label: 'Instagram' },
   { icon: Twitter, href: 'https://twitter.com/reenette_toursntravel', label: 'Twitter' }
 ];
 
@@ -168,7 +168,7 @@ export function Footer() {
                             <p className="font-medium mb-2">Follow Us</p>
                             <div className="flex space-x-3">
                               <a
-                                href="https://instagram.com/reenette_toursntravel"
+                                href="https://www.instagram.com/reenette_toursntravel?igsh=MW9qbWJsZTBsdmhzZQ=="
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-accent transition-colors"
