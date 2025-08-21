@@ -1,6 +1,8 @@
 import { Plane, Instagram, Twitter, Mail, MapPin, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/components/ui/dialog';
+import { useState } from 'react';
 
 const footerLinks = {
   destinations: [
@@ -133,12 +135,68 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.support.map((link) => (
                 <li key={link}>
-                  <a
-                    href="#"
-                    className="opacity-80 hover:opacity-100 hover:text-accent transition-all duration-300"
-                  >
-                    {link}
-                  </a>
+                  {link === 'Contact Support' ? (
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button className="opacity-80 hover:opacity-100 hover:text-accent transition-all duration-300 text-left">
+                          {link}
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-md">
+                        <DialogHeader>
+                          <DialogTitle className="text-xl font-bold text-center">Contact Support</DialogTitle>
+                        </DialogHeader>
+                        <div className="space-y-4 py-4">
+                          <div className="flex items-center space-x-3 p-3 rounded-lg bg-muted">
+                            <Phone className="h-5 w-5 text-accent" />
+                            <div>
+                              <p className="font-medium">Phone & WhatsApp</p>
+                              <p className="text-sm text-muted-foreground">+254 712 345 678</p>
+                            </div>
+                          </div>
+                          
+                          <div className="flex items-center space-x-3 p-3 rounded-lg bg-muted">
+                            <Mail className="h-5 w-5 text-accent" />
+                            <div>
+                              <p className="font-medium">Email</p>
+                              <p className="text-sm text-muted-foreground">info@reenettetours.com</p>
+                            </div>
+                          </div>
+                          
+                          <div className="p-3 rounded-lg bg-muted">
+                            <p className="font-medium mb-2">Follow Us</p>
+                            <div className="flex space-x-3">
+                              <a
+                                href="https://instagram.com/reenette_toursntravel"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+                              >
+                                <Instagram className="h-4 w-4" />
+                                <span>@reenette_toursntravel</span>
+                              </a>
+                              <a
+                                href="https://twitter.com/reenette_toursntravel"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center space-x-2 text-sm text-muted-foreground hover:text-accent transition-colors"
+                              >
+                                <Twitter className="h-4 w-4" />
+                                <span>@reenette_toursntravel</span>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
+                  ) : (
+                    <a
+                      href="#"
+                      className="opacity-80 hover:opacity-100 hover:text-accent transition-all duration-300"
+                    >
+                      {link}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
