@@ -24,6 +24,14 @@ const heroSlides = [
     cta: 'Book Golf Tour'
   },
   {
+    id: 3,
+    image: safariExperience,
+    title: 'Authentic Adventures',
+    subtitle: 'Personalized travel experiences across Kenya\'s wilderness',
+    location: 'Amboseli National Park',
+    cta: 'Plan Your Safari'
+  },
+  {
     id: 4,
     image: heroMountain,
     title: 'Unforgettable Moments',
@@ -75,7 +83,12 @@ export function HeroSection() {
           
           {/* Content Overlay */}
           <div className="absolute inset-0 z-20 flex items-center justify-center">
-          <div className="text-center text-white max-w-4xl mx-auto px-4">
+            <div className="text-center text-white max-w-4xl mx-auto px-4">
+              <div className="flex items-center justify-center mb-4 animate-fade-in-up">
+                <MapPin className="h-5 w-5 mr-2 text-accent" />
+                <span className="text-accent font-medium">{slide.location}</span>
+              </div>
+              
               <h1 className="text-hero mb-6 animate-fade-in-up">
                 {slide.title}
               </h1>
