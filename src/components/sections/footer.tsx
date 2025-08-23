@@ -190,6 +190,151 @@ export function Footer() {
                         </div>
                       </DialogContent>
                     </Dialog>
+                  ) : link === 'Booking Terms' ? (
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button className="opacity-80 hover:opacity-100 hover:text-accent transition-all duration-300 text-left">
+                          {link}
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-4xl max-h-[80vh] overflow-y-auto">
+                        <DialogHeader>
+                          <DialogTitle className="text-2xl font-bold text-center">Booking Terms & Conditions</DialogTitle>
+                          <p className="text-sm text-muted-foreground text-center">Last Updated: 22 August 2025</p>
+                        </DialogHeader>
+                        <div className="space-y-6 py-4">
+                          <p className="text-sm">
+                            These Booking Terms & Conditions apply to all bookings made with Reenette Tours and Travel via our website, email, phone, or in person. By making a booking, you confirm that you have read, understood, and agree to be bound by these Terms.
+                          </p>
+                          
+                          <div className="space-y-4">
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">1. Bookings & Payments</h3>
+                              <ul className="space-y-2 text-sm">
+                                <li>• A booking is considered confirmed only after we receive your deposit or full payment, as indicated in your invoice.</li>
+                                <li>• Prices are quoted in GBP (£) and include applicable taxes unless otherwise stated.</li>
+                                <li>• All quotations are valid for 30 days unless otherwise specified.</li>
+                                <li>• Payments may be made via bank transfer, mobile money (M-Pesa), credit/debit card.</li>
+                              </ul>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">2. Deposits & Balance Payments</h3>
+                              <ul className="space-y-2 text-sm">
+                                <li>• A non-refundable deposit of £300 per person is required to secure your booking. Occasionally, a non-refundable deposit greater than £300 may be required, and you will be advised of this at the time of booking.</li>
+                                <li>• The balance must be received no later than 8 weeks prior to the start of your trip.</li>
+                                <li>• If the balance is not paid by the due date, we reserve the right to treat your booking as cancelled, and the deposit will be forfeited.</li>
+                              </ul>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">3. Cancellations by You</h3>
+                              <p className="text-sm mb-2">If you need to cancel your booking, you must notify us in writing. The following cancellation fees apply:</p>
+                              <ul className="space-y-2 text-sm">
+                                <li>• More than 56 days before travel: Deposit only.</li>
+                                <li>• 55 – 43 days before travel: 30% of total holiday price.</li>
+                                <li>• 42 – 29 days before travel: 50% of total holiday price.</li>
+                                <li>• 28 – 15 days before travel: 75% of total holiday price.</li>
+                                <li>• Less than 14 days before travel: 100% of total holiday price.</li>
+                              </ul>
+                              <p className="text-sm mt-2">If the deposit paid is greater than any of the cancellation bands, the higher amount will apply as a cancellation charge.</p>
+                              <p className="text-sm mt-2">Certain suppliers (e.g., airlines, hotels) may impose stricter cancellation terms, which will apply in addition to the above.</p>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">4. Cancellations by Us</h3>
+                              <ul className="space-y-2 text-sm">
+                                <li>• We may cancel your booking due to unforeseen circumstances, including safety concerns, natural disasters, government restrictions, or insufficient participant numbers (if applicable).</li>
+                                <li>• In such cases, we will offer you a full refund or the option to reschedule at no additional cost.</li>
+                                <li>• We are not liable for additional expenses you may incur (e.g., flights, visas, vaccinations) due to such cancellations.</li>
+                              </ul>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">5. Changes to Your Booking</h3>
+                              <ul className="space-y-2 text-sm">
+                                <li>• Requests for changes to dates, itineraries, or participants must be made in writing and are subject to availability.</li>
+                                <li>• Additional charges may apply if suppliers impose amendment fees.</li>
+                                <li>• If we must make changes to your booking (e.g., due to supplier availability), we will inform you as soon as possible and offer an alternative arrangement of equal or higher value.</li>
+                              </ul>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">6. Travel Insurance</h3>
+                              <ul className="space-y-2 text-sm">
+                                <li>• Comprehensive travel insurance is strongly recommended for all travellers.</li>
+                                <li>• Your policy should cover medical emergencies, evacuation, trip cancellations, delays, lost luggage, and any high-risk activities (e.g., safari, diving, hiking).</li>
+                                <li>• We are not responsible for any costs incurred as a result of you failing to secure adequate insurance.</li>
+                              </ul>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">7. Health, Safety & Travel Documents</h3>
+                              <ul className="space-y-2 text-sm">
+                                <li>• You are responsible for ensuring that you meet all health, vaccination, visa, and passport requirements for your trip.</li>
+                                <li>• Passports must be valid for at least 6 months beyond your travel dates.</li>
+                                <li>• You must inform us of any medical conditions, dietary requirements, or special needs at the time of booking.</li>
+                                <li>• While we take all reasonable measures to ensure your safety, you travel at your own risk and must follow all instructions provided by our guides and partners.</li>
+                              </ul>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">8. Force Majeure</h3>
+                              <p className="text-sm mb-2">We are not liable for delays, changes, or cancellations caused by events beyond our reasonable control, including but not limited to:</p>
+                              <ul className="space-y-2 text-sm">
+                                <li>• Natural disasters (floods, earthquakes, storms)</li>
+                                <li>• War, terrorism, political unrest, or strikes</li>
+                                <li>• Epidemics, pandemics, or government-imposed restrictions</li>
+                                <li>• Technical or operational failures by third-party providers (airlines, hotels, transport companies)</li>
+                              </ul>
+                              <p className="text-sm mt-2">In such cases, refunds or rescheduling options will be provided where possible but are not guaranteed.</p>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">9. Liability</h3>
+                              <ul className="space-y-2 text-sm">
+                                <li>• Our liability is strictly limited to the amount paid to us for your booking.</li>
+                                <li>• We act as an agent for third-party suppliers (e.g., hotels, airlines, transport providers) and are not responsible for their acts, omissions, or failures.</li>
+                                <li>• We are not liable for personal injury, illness, death, loss, or damage to property unless directly caused by our proven negligence.</li>
+                                <li>• Participation in certain activities (e.g., safaris, water sports, adventure tours) involves inherent risks. By booking, you acknowledge and accept these risks.</li>
+                              </ul>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">10. Client Responsibilities</h3>
+                              <ul className="space-y-2 text-sm">
+                                <li>• You are responsible for ensuring that all details in your booking confirmation are accurate.</li>
+                                <li>• You must conduct yourself responsibly and respect local laws, customs, wildlife, and communities during your trip.</li>
+                                <li>• We reserve the right to refuse service or terminate your participation in a tour without refund if your behaviour is unsafe, disruptive, or offensive.</li>
+                              </ul>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">11. Complaints</h3>
+                              <ul className="space-y-2 text-sm">
+                                <li>• If you have a complaint during your trip, you must notify us or our local representative immediately so that we can attempt to resolve it.</li>
+                                <li>• Complaints not raised during the trip must be submitted in writing within 14 days of your return.</li>
+                              </ul>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">12. Governing Law</h3>
+                              <p className="text-sm">These Terms are governed by the laws of Kenya. Any disputes will be subject to the exclusive jurisdiction of the courts of Nairobi, Kenya.</p>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">13. Contact Information</h3>
+                              <p className="text-sm mb-2">For questions, concerns, or support, please contact us:</p>
+                              <ul className="space-y-1 text-sm">
+                                <li>📧 info@reenettetours.com</li>
+                                <li>📞 +254 712 345 678</li>
+                                <li>📍 Nairobi, Kenya</li>
+                              </ul>
+                            </section>
+                          </div>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
                   ) : (
                     <a
                       href="#"
