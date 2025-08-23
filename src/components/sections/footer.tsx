@@ -335,6 +335,126 @@ export function Footer() {
                         </div>
                       </DialogContent>
                     </Dialog>
+                  ) : link === 'Privacy Policy' ? (
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <button className="opacity-80 hover:opacity-100 hover:text-accent transition-all duration-300 text-left">
+                          {link}
+                        </button>
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-4xl max-h-[80vh] overflow-y-auto">
+                        <DialogHeader>
+                          <DialogTitle className="text-2xl font-bold text-center">Privacy Policy</DialogTitle>
+                          <p className="text-sm text-muted-foreground text-center">Last Updated: 22 August 2025</p>
+                        </DialogHeader>
+                        <div className="space-y-6 py-4">
+                          <p className="text-sm">
+                            At Reenette Tours and Travel, your privacy matters to us. This Privacy Policy explains how we collect, use, and protect your personal information when you use our website, make a booking, or contact us.
+                          </p>
+                          <p className="text-sm">
+                            By using our website, you agree to the practices described in this policy.
+                          </p>
+                          
+                          <div className="space-y-4">
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">1. Information We Collect</h3>
+                              <p className="text-sm mb-2">We may collect the following information when you interact with us:</p>
+                              <ul className="space-y-2 text-sm">
+                                <li>• Personal details – name, email address, phone number, billing address.</li>
+                                <li>• Booking details – travel dates, preferences, accommodation, and activity choices.</li>
+                                <li>• Payment details – processed securely via trusted payment providers (we do not store your full card information).</li>
+                                <li>• Website usage data – through cookies, analytics, and similar tools (see our Cookie Policy).</li>
+                              </ul>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">2. How We Use Your Information</h3>
+                              <p className="text-sm mb-2">We use your information to:</p>
+                              <ul className="space-y-2 text-sm">
+                                <li>• Process and confirm your bookings.</li>
+                                <li>• Communicate with you about your trip or enquiry.</li>
+                                <li>• Improve our website, services, and customer experience.</li>
+                                <li>• Send you offers, promotions, or newsletters (if you opt in).</li>
+                                <li>• Comply with legal and regulatory requirements.</li>
+                              </ul>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">3. Sharing Your Information</h3>
+                              <p className="text-sm mb-2">We only share your data when necessary:</p>
+                              <ul className="space-y-2 text-sm">
+                                <li>• With service providers (e.g., hotels, airlines, tour guides) to deliver your booking.</li>
+                                <li>• With payment processors to complete transactions securely.</li>
+                                <li>• If required by law, government authorities, or to protect our legal rights.</li>
+                              </ul>
+                              <p className="text-sm mt-2">We do not sell or rent your personal data to third parties.</p>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">4. Cookies & Tracking</h3>
+                              <ul className="space-y-2 text-sm">
+                                <li>• Our website uses cookies and similar technologies to improve functionality, track usage, and deliver relevant offers.</li>
+                                <li>• For more details, please read our Cookie Policy.</li>
+                              </ul>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">5. Data Security</h3>
+                              <ul className="space-y-2 text-sm">
+                                <li>• We take appropriate technical and organisational measures to protect your personal data from loss, misuse, or unauthorised access.</li>
+                                <li>• However, no online system is 100% secure, so we cannot guarantee absolute protection.</li>
+                              </ul>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">6. Your Rights</h3>
+                              <p className="text-sm mb-2">Depending on applicable law (e.g., GDPR, Kenya Data Protection Act), you may have the right to:</p>
+                              <ul className="space-y-2 text-sm">
+                                <li>• Access, correct, or delete your personal data.</li>
+                                <li>• Withdraw consent for marketing communications at any time.</li>
+                                <li>• Request restriction of processing or data portability.</li>
+                              </ul>
+                              <p className="text-sm mt-2">To exercise these rights, contact us at info@reenettetours.com.</p>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">7. Data Retention</h3>
+                              <p className="text-sm mb-2">We keep your personal data only as long as necessary to:</p>
+                              <ul className="space-y-2 text-sm">
+                                <li>• Fulfil your booking and provide services.</li>
+                                <li>• Meet legal, tax, or regulatory requirements.</li>
+                                <li>• Resolve disputes and enforce agreements.</li>
+                              </ul>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">8. Third-Party Links</h3>
+                              <p className="text-sm">Our website may contain links to other websites (e.g., travel insurance partners, tour providers). We are not responsible for the privacy practices or content of external sites.</p>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">9. Children's Privacy</h3>
+                              <p className="text-sm">Our services are not directed at children under 18. If we learn that we have collected personal data from a minor without parental consent, we will delete it promptly.</p>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">10. Changes to This Policy</h3>
+                              <p className="text-sm">We may update this Privacy Policy from time to time. Any changes will be posted on this page with a new "Last Updated" date.</p>
+                            </section>
+
+                            <section>
+                              <h3 className="font-bold text-lg mb-2">11. Contact Us</h3>
+                              <p className="text-sm mb-2">If you have any questions about this Privacy Policy or how your information is handled, please contact us:</p>
+                              <div className="space-y-2 text-sm">
+                                <p>📧 info@reenettetours.com</p>
+                                <p>📞 +254 712 345 678</p>
+                                <p>📍 Nairobi, Kenya</p>
+                              </div>
+                            </section>
+                          </div>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
                   ) : (
                     <a
                       href="#"
