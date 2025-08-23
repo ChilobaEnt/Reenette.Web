@@ -337,7 +337,7 @@ export function Footer() {
                     </Dialog>
                   ) : link === 'Privacy Policy' ? (
                     <Dialog>
-                      <DialogTrigger asChild>
+                      <DialogTrigger asChild data-privacy-policy>
                         <button className="opacity-80 hover:opacity-100 hover:text-accent transition-all duration-300 text-left">
                           {link}
                         </button>

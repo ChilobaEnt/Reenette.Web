@@ -7,6 +7,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import CookiePolicy from "./pages/CookiePolicy";
 import CookieConsent from "./components/ui/cookie-consent";
+import { PrivacyNotice } from "./components/ui/privacy-notice";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieConsent />
+        <PrivacyNotice />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
