@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { Plane, Facebook, Instagram, Twitter, Youtube, Mail, MapPin, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { CookiePolicyModal } from '@/components/ui/cookie-policy-modal';
 
 const footerLinks = {
   destinations: [
@@ -21,7 +23,6 @@ const footerLinks = {
   ],
   support: [
     'Help Center',
-    'Travel Insurance',
     'Booking Terms',
     'Privacy Policy',
     'Cookie Policy',
@@ -37,6 +38,14 @@ const socialLinks = [
 ];
 
 export function Footer() {
+  const [isCookiePolicyOpen, setIsCookiePolicyOpen] = useState(false);
+
+  const handleLinkClick = (link: string) => {
+    if (link === 'Cookie Policy') {
+      setIsCookiePolicyOpen(true);
+    }
+  };
+
   return (
     <footer className="bg-primary text-primary-foreground">
       {/* Newsletter Section */}
@@ -135,12 +144,12 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.support.map((link) => (
                 <li key={link}>
-                  <a
-                    href="#"
-                    className="opacity-80 hover:opacity-100 hover:text-accent transition-all duration-300"
+                  <button
+                    onClick={() => handleLinkClick(link)}
+                    className="opacity-80 hover:opacity-100 hover:text-accent transition-all duration-300 text-left"
                   >
                     {link}
-                  </a>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -172,6 +181,11 @@ export function Footer() {
           </div>
         </div>
       </div>
+      
+      <CookiePolicyModal 
+        isOpen={isCookiePolicyOpen} 
+        onClose={() => setIsCookiePolicyOpen(false)} 
+      />
     </footer>
   );
 }
