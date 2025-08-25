@@ -56,7 +56,6 @@ export function Navigation({ className }: NavigationProps) {
               <span className="relative z-10 flex items-center gap-2">
                 <span className="animate-pulse">🧭</span>
                 Plan Your Journey
-                <span className="group-hover:translate-x-1 transition-transform duration-300">✨</span>
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </Button>
@@ -100,7 +99,6 @@ export function Navigation({ className }: NavigationProps) {
                   <span className="relative z-10 flex items-center gap-2">
                     <span className="animate-pulse">🧭</span>
                     Plan Your Journey
-                    <span className="group-hover:translate-x-1 transition-transform duration-300">✨</span>
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </Button>
