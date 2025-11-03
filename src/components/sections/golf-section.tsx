@@ -6,7 +6,7 @@ import { GolfToursModal } from './golf-tours-modal';
 
 import kenyaGolf from '@/assets/kenya-golf.jpg';
 import beachParadise from '@/assets/beach-paradise.jpg';
-import templeHeritage from '@/assets/temple-heritage.jpg';
+import templeHeritage from '@/assets/Muthaiga-Golf-Club.jpg';
 
 const golfTours = [
   {
