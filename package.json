@@ -5,10 +5,12 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist",
+  "dev": "vite",
+  "build": "vite build",
+  "build:gh-pages": "vite build --base /Reenette.Web/",
+  "build:netlify": "vite build --base /",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d dist",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview"
