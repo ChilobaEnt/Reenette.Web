@@ -9,7 +9,7 @@
   "build": "vite build",
   "build:gh-pages": "vite build --base /Reenette.Web/",
   "build:netlify": "vite build --base /",
-  "predeploy": "npm run build",
+  "predeploy": "npm run build:gh-pages",
   "deploy": "gh-pages -d dist",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
