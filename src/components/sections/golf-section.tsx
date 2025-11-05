@@ -1,43 +1,53 @@
+import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { MapPin, Star, Clock, Trophy, Calendar, Users } from 'lucide-react';
 import { GolfToursModal } from './golf-tours-modal';
+import { ErrorBoundary } from '@/components/ui/error-boundary';
+import { BookingDialog } from './booking-dialog';
 
 import kenyaGolf from '@/assets/kenya-golf.jpg';
 import beachParadise from '@/assets/beach-paradise.jpg';
 import templeHeritage from '@/assets/Muthaiga-Golf-Club.jpg';
+import type { Tour } from '@/types';
 
-const golfTours = [
+const golfTours: Tour[] = [
   {
     id: 1,
-    name: 'Karen Country Club Experience',
+    title: 'Karen Country Club Experience',
     location: 'Karen, Nairobi',
-    image: kenyaGolf,
+    image_url: kenyaGolf,
     rating: 4.9,
     duration: '3 days',
     description: 'Play at one of Kenya\'s most prestigious golf clubs with stunning views and championship course.',
-    highlights: ['Championship Course', 'Club Facilities', 'Professional Caddie', 'Luxury Accommodation']
+    highlights: ['Championship Course', 'Club Facilities', 'Professional Caddie', 'Luxury Accommodation'],
+    price: 1999.99,
+    created_at: new Date().toISOString()
   },
   {
     id: 2,
-    name: 'Coastal Golf Getaway',
+    title: 'Coastal Golf Getaway',
     location: 'Nyali & Vipingo Ridge',
-    image: beachParadise,
+    image_url: beachParadise,
     rating: 4.8,
     duration: '5 days',
     description: 'Combine golf with beach relaxation at Kenya\'s premier coastal golf destinations.',
-    highlights: ['Ocean Views', 'Beach Resort', 'Two Courses', 'Spa & Wellness']
+    highlights: ['Ocean Views', 'Beach Resort', 'Two Courses', 'Spa & Wellness'],
+    price: 2499.99,
+    created_at: new Date().toISOString()
   },
   {
     id: 3,
-    name: 'Highland Golf Safari',
+    title: 'Highland Golf Safari',
     location: 'Limuru & Muthaiga',
-    image: templeHeritage,
+    image_url: templeHeritage,
     rating: 4.7,
     duration: '4 days',
     description: 'Experience golf in Kenya\'s beautiful highlands with historic clubs and scenic courses.',
-    highlights: ['Historic Clubs', 'Mountain Views', 'Colonial Heritage', 'Fine Dining']
+    highlights: ['Historic Clubs', 'Mountain Views', 'Colonial Heritage', 'Fine Dining'],
+    price: 2299.99,
+    created_at: new Date().toISOString()
   }
 ];
 
@@ -51,11 +61,20 @@ const golfClubs = [
 ];
 
 export function GolfSection() {
+  const [selectedTour, setSelectedTour] = useState<Tour | null>(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
+
+  const handleBooking = (tour: Tour) => {
+    setSelectedTour(tour);
+    setDialogOpen(true);
+  };
+
   return (
-    <section id="golf" className="py-20 bg-gradient-to-br from-muted/30 to-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+    <ErrorBoundary>
+      <section id="golf" className="py-20 bg-gradient-to-br from-muted/30 to-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Championship{' '}
             <span className="bg-gradient-sunset bg-clip-text text-transparent">
@@ -78,8 +97,8 @@ export function GolfSection() {
             >
               <div className="relative overflow-hidden">
                 <img
-                  src={tour.image}
-                  alt={tour.name}
+                  src={tour.image_url}
+                  alt={tour.title}
                   className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute top-4 left-4">
@@ -104,7 +123,7 @@ export function GolfSection() {
                 </div>
 
                 <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
-                  {tour.name}
+                  {tour.title}
                 </h3>
 
                 <p className="text-muted-foreground mb-4">
@@ -126,10 +145,10 @@ export function GolfSection() {
                 <Button 
                   className="w-full group-hover:shadow-glow transition-all duration-300"
                   variant="default"
-                  onClick={() => window.location.href = '#contact'}
+                  onClick={() => handleBooking(tour)}
                 >
                   <Trophy className="h-4 w-4 mr-2" />
-                  Book Golf Tour
+                  Check Availability for Your Dates
                 </Button>
               </CardContent>
             </Card>
@@ -220,6 +239,16 @@ export function GolfSection() {
           </Card>
         </div>
       </div>
+
+      {/* Booking Dialog */}
+      {selectedTour && (
+        <BookingDialog
+          tour={selectedTour}
+          open={dialogOpen}
+          onOpenChange={setDialogOpen}
+        />
+      )}
     </section>
+    </ErrorBoundary>
   );
 }

@@ -134,7 +134,7 @@ export function GolfToursModal({ children }: GolfToursModalProps) {
             className="hover:shadow-glow transition-all duration-300"
             onClick={() => window.location.href = '#contact'}
           >
-            Book Now
+            Check Availability for Your Dates
           </Button>
         </div>
       </CardContent>

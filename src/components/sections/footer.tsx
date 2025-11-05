@@ -53,22 +53,22 @@ export function Footer() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <div className="max-w-2xl mx-auto text-center">
             <h3 className="text-2xl font-bold mb-4">
-              Stay Inspired
+              Subscribe for Exclusive Travel Deals
             </h3>
             <p className="mb-6 opacity-90">
-              Get travel tips, destination guides, and exclusive offers delivered to your inbox.
+              Join our newsletter and receive special offers, expert travel tips, and first access to new tours.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <Input
                 type="email"
-                placeholder="Your email address"
+                placeholder="Enter your email for exclusive offers"
                 className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60"
               />
               <Button
                 variant="secondary"
                 className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-glow"
               >
-                Subscribe
+                Get Exclusive Deals
               </Button>
             </div>
           </div>

@@ -1,50 +1,69 @@
+import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { MapPin, Star, Clock, Binoculars, Camera, Users } from 'lucide-react';
+import { ErrorBoundary } from '@/components/ui/error-boundary';
+import { BookingDialog } from './booking-dialog';
 import kenyaSafari from '@/assets/kenya-safari.jpg';
 import safariExperience from '@/assets/safari-experience.jpg';
 import heroMountain from '@/assets/hero-mountain.jpg';
+import type { Tour } from '@/types';
 
-const safariTours = [
+const safariTours: Tour[] = [
   {
     id: 1,
-    name: 'Maasai Mara Big Five Safari',
+    title: 'Maasai Mara Big Five Safari',
     location: 'Maasai Mara National Reserve',
-    image: kenyaSafari,
+    image_url: kenyaSafari,
     rating: 4.9,
     duration: '5 days',
     description: 'Witness the Great Migration and encounter the Big Five in Kenya\'s most famous reserve.',
-    highlights: ['Big Five Viewing', 'Great Migration', 'Maasai Culture', 'Game Drives']
+    highlights: ['Big Five Viewing', 'Great Migration', 'Maasai Culture', 'Game Drives'],
+    price: 2499.99,
+    created_at: new Date().toISOString()
   },
   {
     id: 2,
-    name: 'Amboseli Elephant Safari',
+    title: 'Amboseli Elephant Safari',
     location: 'Amboseli National Park',
-    image: safariExperience,
+    image_url: safariExperience,
     rating: 4.8,
     duration: '4 days',
     description: 'Experience close encounters with elephants against the backdrop of Mount Kilimanjaro.',
-    highlights: ['Elephant Herds', 'Mt. Kilimanjaro Views', 'Birdwatching', 'Photography']
+    highlights: ['Elephant Herds', 'Mt. Kilimanjaro Views', 'Birdwatching', 'Photography'],
+    price: 1999.99,
+    created_at: new Date().toISOString()
   },
   {
     id: 3,
-    name: 'Mount Kenya Adventure',
+    title: 'Mount Kenya Adventure',
     location: 'Mount Kenya National Park',
-    image: heroMountain,
+    image_url: heroMountain,
     rating: 4.7,
     duration: '6 days',
     description: 'Combine wildlife viewing with mountain adventures in Kenya\'s highest peak region.',
-    highlights: ['Mountain Views', 'Diverse Wildlife', 'Hiking Trails', 'Cultural Sites']
+    highlights: ['Mountain Views', 'Diverse Wildlife', 'Hiking Trails', 'Cultural Sites'],
+    price: 2799.99,
+    created_at: new Date().toISOString()
   }
 ];
 
 export function SafariSection() {
+  const [selectedTour, setSelectedTour] = useState<Tour | null>(null);
+  const [dialogOpen, setDialogOpen] = useState(false);
+
+  const handleBooking = (tour: Tour) => {
+    setSelectedTour(tour);
+    setDialogOpen(true);
+  };
+
   return (
-    <section id="safari" className="py-20 bg-background">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+    <ErrorBoundary>
+      <section id="safari" className="py-20 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             East African{' '}
             <span className="bg-gradient-sunset bg-clip-text text-transparent">
@@ -67,8 +86,8 @@ export function SafariSection() {
             >
               <div className="relative overflow-hidden">
                 <img
-                  src={tour.image}
-                  alt={tour.name}
+                  src={tour.image_url}
+                  alt={tour.title}
                   className="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute top-4 left-4">
@@ -92,11 +111,9 @@ export function SafariSection() {
                   </div>
                 </div>
 
-                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
-                  {tour.name}
-                </h3>
-
-                <p className="text-muted-foreground mb-4">
+                  <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                    {tour.title}
+                  </h3>                <p className="text-muted-foreground mb-4">
                   {tour.description}
                 </p>
 
@@ -115,10 +132,10 @@ export function SafariSection() {
                 <Button 
                   className="w-full group-hover:shadow-glow transition-all duration-300"
                   variant="default"
-                  onClick={() => window.location.href = '#contact'}
+                  onClick={() => handleBooking(tour)}
                 >
                   <Binoculars className="h-4 w-4 mr-2" />
-                  Book Safari
+                  Check Availability for Your Dates
                 </Button>
               </CardContent>
             </Card>
@@ -171,5 +188,6 @@ export function SafariSection() {
         </div>
       </div>
     </section>
+    </ErrorBoundary>
   );
 }
