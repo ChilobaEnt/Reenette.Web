@@ -52,20 +52,33 @@ export function BookingDialog({ tour, open, onOpenChange }: BookingDialogProps) 
       return;
     }
 
-    const success = await createBooking({
-      tour_id: tour.id,
-      date: format(data.date, 'yyyy-MM-dd'),
-      participants: data.participants,
-      special_requests: data.special_requests,
-    });
+    try {
+      // Ensure date is a Date instance before formatting
+      const selectedDate = data.date instanceof Date ? data.date : new Date(data.date as any);
 
-    if (success) {
-      setBookingSuccess(true);
-      setTimeout(() => {
-        onOpenChange(false);
-        setBookingSuccess(false);
-        form.reset();
-      }, 2000);
+      const success = await createBooking({
+        tour_id: tour.id,
+        date: format(selectedDate, 'yyyy-MM-dd'),
+        participants: data.participants,
+        special_requests: data.special_requests,
+      });
+
+      if (success) {
+        setBookingSuccess(true);
+        setTimeout(() => {
+          onOpenChange(false);
+          setBookingSuccess(false);
+          form.reset();
+        }, 2000);
+      }
+    } catch (err) {
+      // Log and surface a non-fatal friendly error (ErrorBoundary will not
+      // trigger because we catch here). You can replace this with toast/snack.
+      // eslint-disable-next-line no-console
+      console.error('Booking failed:', err);
+      // Optionally set a local error state or reuse the global hook error.
+      // For now we'll show a browser alert to keep it visible to the user.
+      alert('Unable to process booking at the moment. Please try again later.');
     }
   };
 

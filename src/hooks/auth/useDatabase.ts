@@ -54,7 +54,11 @@ export function useDatabase() {
     }
   };
 
-  const createBooking = async (tourId: number): Promise<boolean> => {
+  // Accept an object matching the BookingFormData shape so callers can pass
+  // date, participants and other fields. The server function will pick the
+  // fields it needs (user_id, tour_id) but it's useful to send the full
+  // booking payload from the client.
+  const createBooking = async (bookingData: { tour_id: number; date: string; participants: number; special_requests?: string }): Promise<boolean> => {
     if (!user) {
       setError('You must be logged in to book a tour');
       return false;
@@ -64,19 +68,21 @@ export function useDatabase() {
     setError(null);
 
     try {
+      // Merge authenticated user id with the form payload
+      const body = {
+        user_id: user.id,
+        ...bookingData,
+      };
+
       const response = await fetch('/.netlify/functions/createBooking', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          user_id: user.id,
-          tour_id: tourId,
-        }),
+        body: JSON.stringify(body),
       });
 
       if (!response.ok) throw new Error('Failed to create booking');
-      
       return true;
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to create booking');
