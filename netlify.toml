@@ -32,7 +32,7 @@
   "tour-id" = "Tour ID"
 
 [[forms."tour-booking".notifications]]
-  to = "your-email@example.com"  # Replace with your email
+  to = "info@reenette.com"
   from = "noreply@reenette.tours"
   subject = "New Tour Booking Request: {form[tour-name]}"
   template = """
