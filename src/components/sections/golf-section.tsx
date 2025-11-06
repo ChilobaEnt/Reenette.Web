@@ -155,7 +155,7 @@ export function GolfSection() {
                   onClick={() => handleBooking(tour)}
                 >
                   <Trophy className="h-4 w-4 mr-2" />
-                  Check Availability for Your Dates
+                  Book Golf Tour
                 </Button>
               </CardContent>
             </Card>

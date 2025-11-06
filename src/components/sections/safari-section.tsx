@@ -142,7 +142,7 @@ export function SafariSection() {
                   onClick={() => handleBooking(tour)}
                 >
                   <Binoculars className="h-4 w-4 mr-2" />
-                  Check Availability for Your Dates
+                  Book Safari
                 </Button>
               </CardContent>
             </Card>
