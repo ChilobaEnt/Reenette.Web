@@ -4,7 +4,7 @@ import { ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
 import heroMountain from '@/assets/hero-mountain.jpg';
 import kenyaSafari from '@/assets/kenya-safari.jpg';
 import kenyaGolf from '@/assets/kenya-golf.jpg';
-import safariExperience from '@/assets/safari-experience.jpg';
+import amboseliLake from '@/assets/amboseli-lake.jpg';
 
 const heroSlides = [
   {
@@ -25,7 +25,7 @@ const heroSlides = [
   },
   {
     id: 3,
-    image: safariExperience,
+    image: amboseliLake,
     title: 'Authentic Adventures',
     subtitle: 'Personalized travel experiences across Kenya\'s wilderness',
     location: 'Amboseli National Park',
