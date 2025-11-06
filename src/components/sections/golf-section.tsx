@@ -5,7 +5,8 @@ import { Badge } from '@/components/ui/badge';
 import { MapPin, Star, Clock, Trophy, Calendar, Users } from 'lucide-react';
 import { GolfToursModal } from './golf-tours-modal';
 import { ErrorBoundary } from '@/components/ui/error-boundary';
-import { BookingDialog } from './booking-dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { BookingForm } from './booking-form';
 
 import kenyaGolf from '@/assets/kenya-golf.jpg';
 import beachParadise from '@/assets/beach-paradise.jpg';
@@ -67,6 +68,12 @@ export function GolfSection() {
   const handleBooking = (tour: Tour) => {
     setSelectedTour(tour);
     setDialogOpen(true);
+  };
+
+  const handleBookingSuccess = () => {
+    setTimeout(() => {
+      setDialogOpen(false);
+    }, 3000);
   };
 
   return (
@@ -242,11 +249,14 @@ export function GolfSection() {
 
       {/* Booking Dialog */}
       {selectedTour && (
-        <BookingDialog
-          tour={selectedTour}
-          open={dialogOpen}
-          onOpenChange={setDialogOpen}
-        />
+        <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+          <DialogContent className="sm:max-w-[500px]">
+            <DialogHeader>
+              <DialogTitle className="text-2xl">{selectedTour.title}</DialogTitle>
+            </DialogHeader>
+            <BookingForm tour={selectedTour} onSuccess={handleBookingSuccess} />
+          </DialogContent>
+        </Dialog>
       )}
     </section>
     </ErrorBoundary>

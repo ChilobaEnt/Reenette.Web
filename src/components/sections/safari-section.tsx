@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { MapPin, Star, Clock, Binoculars, Camera, Users } from 'lucide-react';
 import { ErrorBoundary } from '@/components/ui/error-boundary';
-import { BookingDialog } from './booking-dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { BookingForm } from './booking-form';
 import kenyaSafari from '@/assets/kenya-safari.jpg';
 import safariExperience from '@/assets/safari-experience.jpg';
 import heroMountain from '@/assets/hero-mountain.jpg';
@@ -56,6 +57,12 @@ export function SafariSection() {
   const handleBooking = (tour: Tour) => {
     setSelectedTour(tour);
     setDialogOpen(true);
+  };
+
+  const handleBookingSuccess = () => {
+    setTimeout(() => {
+      setDialogOpen(false);
+    }, 3000);
   };
 
   return (
@@ -186,6 +193,18 @@ export function SafariSection() {
             View All Safari Tours
           </Button>
         </div>
+
+        {/* Booking Dialog */}
+        {selectedTour && (
+          <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+            <DialogContent className="sm:max-w-[500px]">
+              <DialogHeader>
+                <DialogTitle className="text-2xl">{selectedTour.title}</DialogTitle>
+              </DialogHeader>
+              <BookingForm tour={selectedTour} onSuccess={handleBookingSuccess} />
+            </DialogContent>
+          </Dialog>
+        )}
       </div>
     </section>
     </ErrorBoundary>

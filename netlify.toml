@@ -17,3 +17,36 @@
   from = "/.netlify/functions/*"
   to = "/.netlify/functions/:splat"
   status = 200
+
+[forms]
+  [forms."tour-booking"]
+    name = "Tour Booking Request"
+
+[forms."tour-booking".fields]
+  name = "Full Name"
+  email = "Email Address"
+  "preferred-date" = "Preferred Date"
+  participants = "Number of Participants"
+  "special-requests" = "Special Requests (Optional)"
+  "tour-name" = "Tour Name"
+  "tour-id" = "Tour ID"
+
+[[forms."tour-booking".notifications]]
+  to = "your-email@example.com"  # Replace with your email
+  from = "noreply@reenette.tours"
+  subject = "New Tour Booking Request: {form[tour-name]}"
+  template = """
+    New booking request received!
+
+    Tour: {form[tour-name]}
+    Customer: {form[name]}
+    Email: {form[email]}
+    Date: {form[preferred-date]}
+    Participants: {form[participants]}
+
+    Special Requests:
+    {form[special-requests]}
+
+    View all details in your Netlify dashboard:
+    {admin_url}/forms
+  """
