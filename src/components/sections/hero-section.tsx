@@ -84,10 +84,7 @@ export function HeroSection() {
           {/* Content Overlay */}
           <div className="absolute inset-0 z-20 flex items-center justify-center">
             <div className="text-center text-white max-w-4xl mx-auto px-4">
-              <div className="flex items-center justify-center mb-4 animate-fade-in-up">
-                <MapPin className="h-5 w-5 mr-2 text-accent" />
-                <span className="text-accent font-medium">{slide.location}</span>
-              </div>
+              {/* Removed destination name/location display */}
               
               <h1 className="text-hero mb-6 animate-fade-in-up">
                 {slide.title}
@@ -106,9 +103,8 @@ export function HeroSection() {
                   Get Your Custom Itinerary
                 </Button>
                 <Button 
-                  variant="outline" 
                   size="lg"
-                  className="border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
+                  className="bg-primary text-primary-foreground font-bold shadow-lg border-2 border-primary hover:bg-primary/90 hover:text-white transition-all duration-300"
                   onClick={() => window.location.href = '#destinations'}
                 >
                   View Our Destinations
