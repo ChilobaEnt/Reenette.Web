@@ -29,7 +29,7 @@ export function Navigation({ className }: NavigationProps) {
           <div className="flex items-center space-x-2">
             <Plane className="h-8 w-8 text-primary" />
             <span className="text-xl md:text-2xl font-bold text-primary">
-              Reenette Tours
+              Reenette Tours and Travel Ltd
             </span>
           </div>
 

@@ -45,7 +45,7 @@ export function ExperienceSection() {
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Why Choose{' '}
             <span className="bg-gradient-sunset bg-clip-text text-transparent">
-              Reenette Tours
+              Reenette Tours and Travel Ltd
             </span>
           </h2>
           <p className="text-xl text-muted-foreground">

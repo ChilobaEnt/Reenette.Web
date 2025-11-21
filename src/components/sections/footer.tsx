@@ -82,7 +82,7 @@ export function Footer() {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-6">
               <Plane className="h-8 w-8 text-accent" />
-              <span className="text-2xl font-bold">Reenette Tours</span>
+              <span className="text-2xl font-bold">Reenette Tours and Travel Ltd</span>
             </div>
             <p className="mb-6 opacity-90 leading-relaxed">
               Reenette Tours and Travel Ltd. is a premier East African specialty safari provider 
