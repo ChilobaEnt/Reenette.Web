@@ -1,10 +1,23 @@
 import { Navigation } from '@/components/ui/navigation';
+import { useEffect } from 'react';
 import { Footer } from '@/components/sections/footer';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Shield, Clock, Settings, Mail, MapPin } from 'lucide-react';
 
 const CookiePolicy = () => {
+  useEffect(() => {
+    // Add a meta robots tag to prevent indexing of this page
+    const meta = document.createElement('meta');
+    meta.name = 'robots';
+    meta.content = 'noindex, nofollow';
+    document.head.appendChild(meta);
+
+    return () => {
+      // Clean up when the component unmounts
+      if (meta && meta.parentNode) meta.parentNode.removeChild(meta);
+    };
+  }, []);
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
