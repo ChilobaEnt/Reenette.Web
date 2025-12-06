@@ -20,13 +20,14 @@ All colors MUST be HSL for perfect theming.
     --popover: 0 0% 100%;
     --popover-foreground: 25 25% 15%;
 
-  /* Reenette primary - richer/darker African brown */
-  --primary: 25 58% 23%;
+  /* Reenette primary - darker rich African brown */
+  /* Lower lightness for a stronger, richer brown */
+  --primary: 25 58% 18%;
   --primary-foreground: 0 0% 98%;
-  --primary-glow: 25 45% 35%;
+  --primary-glow: 25 45% 25%;
 
-  /* Warm earth secondary - slightly deeper */
-  --secondary: 25 35% 80%;
+  /* Warm earth secondary - slightly deeper to match primary */
+  --secondary: 25 35% 75%;
   --secondary-foreground: 25 50% 25%;
 
     /* Muted earth tones */
