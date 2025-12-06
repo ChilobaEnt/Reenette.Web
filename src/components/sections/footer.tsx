@@ -110,12 +110,7 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.destinations.map((link) => (
                 <li key={link}>
-                  <a
-                    href="#"
-                    className="opacity-80 hover:opacity-100 hover:text-accent transition-all duration-300"
-                  >
-                    {link}
-                  </a>
+                  <span className="opacity-80 transition-all duration-300">{link}</span>
                 </li>
               ))}
             </ul>
@@ -127,12 +122,7 @@ export function Footer() {
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link}>
-                  <a
-                    href="#"
-                    className="opacity-80 hover:opacity-100 hover:text-accent transition-all duration-300"
-                  >
-                    {link}
-                  </a>
+                  <span className="opacity-80 transition-all duration-300">{link}</span>
                 </li>
               ))}
             </ul>

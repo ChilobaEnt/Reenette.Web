@@ -220,7 +220,6 @@ export function ContactSection() {
                     <span>4.9/5 Rating</span>
                   </div>
                   <div>•</div>
-                  <div>5,000+ Happy Travelers</div>
                 </div>
               </CardContent>
             </Card>
