@@ -170,7 +170,7 @@ export function GolfSection() {
               size="lg"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             >
-              See More Golf Tours
+              Premium Golf Tours
             </Button>
           </GolfToursModal>
         </div>

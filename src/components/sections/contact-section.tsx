@@ -11,13 +11,13 @@ const contactInfo = [
   {
     icon: Mail,
     title: 'Email Us',
-    value: 'info@reenettetours.com',
+    value: 'info@reenette.com',
     description: 'Get answers to your questions'
   },
   {
     icon: Phone,
     title: 'WhatsApp Us',
-    value: '+254 712 345 678',
+  value: '+254 777753195',
     description: 'Speak to our safari experts'
   },
   {

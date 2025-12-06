@@ -119,8 +119,8 @@ export function CookiePolicyModal({ isOpen, onClose }: CookiePolicyModalProps) {
                   If you have questions about our Cookie Policy, please contact us:
                 </p>
                 <div className="mt-2">
-                  <p>📧 info@reenettetours.com</p>
-                  <p>📞 +254 712 345 678</p>
+                  <p>📧 info@reenette.com</p>
+                  <p>📞 +254 777753195</p>
                   <p>📍 Nairobi, Kenya</p>
                 </div>
               </CardContent>

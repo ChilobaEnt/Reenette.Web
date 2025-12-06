@@ -9,8 +9,9 @@ All colors MUST be HSL for perfect theming.
 @layer base {
   :root {
     /* Reenette brand colors - warm African earth tones */
-    --background: 28 25% 97%;
-    --foreground: 25 25% 15%;
+  /* Slightly darker warm background (soft brown tint) */
+  --background: 25 28% 95%;
+  --foreground: 25 25% 15%;
 
     /* Card surfaces with subtle warmth */
     --card: 0 0% 100%;
@@ -19,14 +20,14 @@ All colors MUST be HSL for perfect theming.
     --popover: 0 0% 100%;
     --popover-foreground: 25 25% 15%;
 
-    /* Reenette primary - rich African brown */
-    --primary: 25 58% 27%;
-    --primary-foreground: 0 0% 98%;
-    --primary-glow: 25 45% 45%;
+  /* Reenette primary - richer/darker African brown */
+  --primary: 25 58% 23%;
+  --primary-foreground: 0 0% 98%;
+  --primary-glow: 25 45% 35%;
 
-    /* Warm earth secondary - lighter brown */
-    --secondary: 25 35% 85%;
-    --secondary-foreground: 25 50% 25%;
+  /* Warm earth secondary - slightly deeper */
+  --secondary: 25 35% 80%;
+  --secondary-foreground: 25 50% 25%;
 
     /* Muted earth tones */
     --muted: 28 15% 92%;

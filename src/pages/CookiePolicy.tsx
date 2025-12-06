@@ -211,7 +211,7 @@ const CookiePolicy = () => {
               <div className="space-y-2">
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <Mail className="h-4 w-4" />
-                  <span>info@reenettetours.com</span>
+                  <span>info@reenette.com</span>
                 </div>
                 <div className="flex items-center gap-2 text-muted-foreground">
                   <MapPin className="h-4 w-4" />
