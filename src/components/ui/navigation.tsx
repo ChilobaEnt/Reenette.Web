@@ -27,8 +27,10 @@ export function Navigation({ className }: NavigationProps) {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            {/* Replace the plane icon with a custom logo image placed in the public folder as /reenette-banner.jpg */}
-            <img src="/reenette-banner.jpg" alt="Reenette logo" className="h-10 w-10 object-contain" />
+            {/* Custom logo image (placed in public/) - links to home */}
+            <a href="/" className="inline-block -mt-0.5">
+              <img src="/reenette-banner.svg" alt="Reenette logo" className="h-10 w-auto object-contain" />
+            </a>
             <span className="text-xl md:text-2xl font-bold text-primary">
               <span className="hidden md:inline">Reenette Tours and Travel Ltd</span>
               <span className="inline md:hidden">Reenette Tours</span>

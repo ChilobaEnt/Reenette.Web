@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Plane, Facebook, Instagram, Twitter, Youtube, Mail, MapPin, Phone } from 'lucide-react';
+import { Facebook, Instagram, Twitter, Youtube, Mail, MapPin, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { CookiePolicyModal } from '@/components/ui/cookie-policy-modal';
@@ -80,8 +80,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Brand Section */}
           <div className="lg:col-span-2">
-            <div className="flex items-center space-x-2 mb-6">
-              <Plane className="h-8 w-8 text-accent" />
+            <div className="flex items-center space-x-3 mb-6">
+              <img src="/reenette-banner.svg" alt="Reenette logo" className="h-8 w-auto object-contain" />
               <span className="text-2xl font-bold">Reenette Tours and Travel Ltd</span>
             </div>
             <p className="mb-6 opacity-90 leading-relaxed">
