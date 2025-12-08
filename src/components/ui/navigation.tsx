@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Menu, X, Plane } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface NavigationProps {
@@ -26,8 +26,9 @@ export function Navigation({ className }: NavigationProps) {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <Plane className="h-8 w-8 text-primary" />
+          <div className="flex items-center space-x-3">
+            {/* Replace the plane icon with a custom logo image placed in the public folder as /reenette-banner.jpg */}
+            <img src="/reenette-banner.jpg" alt="Reenette logo" className="h-10 w-10 object-contain" />
             <span className="text-xl md:text-2xl font-bold text-primary">
               <span className="hidden md:inline">Reenette Tours and Travel Ltd</span>
               <span className="inline md:hidden">Reenette Tours</span>
