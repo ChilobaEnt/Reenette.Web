@@ -81,7 +81,7 @@ export function Footer() {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <img src="/reenette-banner.svg" alt="Reenette logo" className="h-8 w-auto object-contain" />
+              <img src="/reenette-banner.svg" alt="Reenette logo" className="h-6 w-auto object-contain mr-2" />
               <span className="text-2xl font-bold">Reenette Tours and Travel Ltd</span>
             </div>
             <p className="mb-6 opacity-90 leading-relaxed">
