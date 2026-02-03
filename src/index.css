@@ -8,104 +8,52 @@ All colors MUST be HSL for perfect theming.
 
 @layer base {
   :root {
-    /* Reenette brand colors - warm African earth tones */
-  /* Slightly darker warm background (soft brown tint) */
-  --background: 25 28% 95%;
-  --foreground: 25 25% 15%;
+    /* Dark-only palette: dark brown background and white text */
+    --background: 25 60% 12%;
+    --foreground: 0 0% 100%;
 
-    /* Card surfaces with subtle warmth */
-    --card: 0 0% 100%;
-    --card-foreground: 25 25% 15%;
+    /* Card surfaces */
+    --card: 25 60% 16%;
+    --card-foreground: 0 0% 100%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 25 25% 15%;
+    --popover: 25 60% 16%;
+    --popover-foreground: 0 0% 100%;
 
-  /* Reenette primary - darker rich African brown */
-  /* Lower lightness for a stronger, richer brown */
-  --primary: 25 58% 18%;
-  --primary-foreground: 0 0% 98%;
-  --primary-glow: 25 45% 25%;
+    /* Primary = white (for buttons/accents on dark background) */
+    --primary: 0 0% 100%;
+    --primary-foreground: 25 60% 12%;
+    --primary-glow: 0 0% 95%;
 
-  /* Warm earth secondary - slightly deeper to match primary */
-  --secondary: 25 35% 75%;
-  --secondary-foreground: 25 50% 25%;
+    /* Secondary follows primary */
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 25 60% 12%;
 
-    /* Muted earth tones */
-    --muted: 28 15% 92%;
-    --muted-foreground: 25 15% 55%;
+    /* Muted / surfaces (dark) */
+    --muted: 25 60% 12%;
+    --muted-foreground: 0 0% 100%;
 
-    /* Safari accent - warm gold/amber */
-    --accent: 45 95% 58%;
-    --accent-foreground: 25 50% 15%;
+    /* Accent uses white on dark */
+    --accent: 0 0% 100%;
+    --accent-foreground: 25 60% 12%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 0% 100%;
+    --destructive-foreground: 25 60% 12%;
 
-    /* Subtle borders and inputs */
-    --border: 28 20% 88%;
-    --input: 28 20% 88%;
-    --ring: 25 58% 27%;
+    /* Borders and inputs */
+    --border: 0 0% 90%;
+    --input: 25 60% 16%;
+    --ring: 0 0% 100%;
 
     --radius: 0.5rem;
 
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    /* Dark mode with deep African earth tones */
-    --background: 25 35% 8%;
-    --foreground: 28 25% 95%;
-
-    --card: 25 35% 12%;
-    --card-foreground: 28 25% 95%;
-
-    --popover: 25 35% 12%;
-    --popover-foreground: 28 25% 95%;
-
-    /* Bright safari gold for dark mode */
-    --primary: 25 58% 55%;
-    --primary-foreground: 25 35% 8%;
-    --primary-glow: 25 45% 35%;
-
-    /* Warm secondary in dark */
-    --secondary: 25 25% 18%;
-    --secondary-foreground: 28 25% 85%;
-
-    --muted: 25 25% 15%;
-    --muted-foreground: 28 15% 65%;
-
-    /* Vibrant gold accent */
-    --accent: 45 95% 68%;
-    --accent-foreground: 25 35% 8%;
-
-    --destructive: 0 75% 55%;
-    --destructive-foreground: 28 25% 95%;
-
-    --border: 25 25% 20%;
-    --input: 25 25% 20%;
-    --ring: 25 58% 55%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --sidebar-background: 25 60% 12%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 25 60% 12%;
+    --sidebar-accent: 0 0% 100%;
+    --sidebar-accent-foreground: 25 60% 12%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 0 0% 100%;
   }
 }
 

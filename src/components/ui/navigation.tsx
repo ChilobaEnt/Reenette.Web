@@ -30,7 +30,7 @@ export function Navigation({ className }: NavigationProps) {
             {/* Custom logo image (placed in public/) - links to home */}
             <a href="/" className="inline-block -mt-0.5">
               {/* slightly larger logo for better clarity and spacing on desktop */}
-              <img src="/reenette-banner.svg" alt="Reenette logo" className="h-12 md:h-14 w-auto object-contain" />
+              <img src="/reenette-logo.svg" alt="Reenette logo" className="h-12 md:h-14 w-auto object-contain" />
             </a>
             <span className="text-xl md:text-2xl font-bold text-primary">
               <span className="hidden md:inline">Reenette Tours and Travel Ltd</span>

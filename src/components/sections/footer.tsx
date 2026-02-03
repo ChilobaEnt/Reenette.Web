@@ -165,8 +165,8 @@ export function Footer() {
               })}
             </div>
             <div className="text-sm opacity-80 text-center md:text-right">
-              <p>&copy; 2025 Reenette Tours and Travel Ltd. All rights reserved.</p>
-              <p className="mt-1">Licensed Kenya Tour Operator | Fully Bonded | KATA Member</p>
+              <p>&copy; 2026 Reenette Tours and Travel Ltd. All rights reserved.</p>
+              <p className="mt-1">Licensed Kenya Tour Operator</p>
             </div>
           </div>
         </div>

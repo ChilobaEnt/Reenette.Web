@@ -24,7 +24,7 @@ const experiences = [
   {
     icon: Shield,
     title: 'Fully Licensed',
-    description: 'Licensed tour operator with comprehensive insurance and 24/7 support throughout Kenya.',
+    description: 'Licensed tour operator with support throughout Kenya.',
     badge: '100% Licensed'
   }
 ];
@@ -32,7 +32,7 @@ const experiences = [
 const stats = [
   { number: '15+', label: 'Safari Destinations' },
   { number: '12+', label: 'Golf Courses' },
-  { number: '5,000+', label: 'Happy Travelers' },
+  { number: '400+', label: 'Happy Travelers' },
   { number: '99%', label: 'Satisfaction Rate' }
 ];
 

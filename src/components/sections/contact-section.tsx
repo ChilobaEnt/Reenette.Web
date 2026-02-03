@@ -29,7 +29,7 @@ const contactInfo = [
   {
     icon: Clock,
     title: 'Office Hours',
-    value: 'Mon - Fri: 8AM - 6PM EAT',
+    value: 'Mon - Fri: 8:00 - 5:00',
     description: 'We\'re here to help'
   }
 ];
@@ -57,7 +57,7 @@ export function ContactSection() {
     // Simulate form submission
     toast({
       title: "Message Sent Successfully!",
-      description: "Our travel experts will get back to you within 24 hours.",
+      description: "Our travel experts will get back to you soon.",
     });
 
     // Reset form
@@ -168,17 +168,7 @@ export function ContactSection() {
                 </Button>
               </form>
 
-              {/* Trust Indicators */}
-              <div className="flex items-center justify-center space-x-4 pt-4 border-t">
-                <div className="flex items-center text-sm text-muted-foreground">
-                  <Star className="h-4 w-4 text-accent mr-1 fill-current" />
-                  <span>24h Response Time</span>
-                </div>
-                <div className="flex items-center text-sm text-muted-foreground">
-                  <Star className="h-4 w-4 text-accent mr-1 fill-current" />
-                  <span>Expert Consultation</span>
-                </div>
-              </div>
+              {/* Trust Indicators removed as requested */}
             </CardContent>
           </Card>
 
