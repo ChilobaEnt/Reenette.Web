@@ -152,8 +152,8 @@ export function SafariSection() {
         {/* Safari Features */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
           <Card className="text-center p-6 border-0 shadow-soft bg-card/50 backdrop-blur-sm">
-            <div className="w-16 h-16 mx-auto bg-gradient-hero rounded-full flex items-center justify-center mb-4">
-              <Binoculars className="h-8 w-8 text-white" />
+              <div className="w-16 h-16 mx-auto bg-gradient-hero rounded-full flex items-center justify-center mb-4">
+              <Binoculars className="h-8 w-8 text-black" />
             </div>
             <h3 className="text-lg font-bold mb-2">Expert Guides</h3>
             <p className="text-muted-foreground text-sm">
@@ -162,8 +162,8 @@ export function SafariSection() {
           </Card>
 
           <Card className="text-center p-6 border-0 shadow-soft bg-card/50 backdrop-blur-sm">
-            <div className="w-16 h-16 mx-auto bg-gradient-hero rounded-full flex items-center justify-center mb-4">
-              <Camera className="h-8 w-8 text-white" />
+              <div className="w-16 h-16 mx-auto bg-gradient-hero rounded-full flex items-center justify-center mb-4">
+              <Camera className="h-8 w-8 text-black" />
             </div>
             <h3 className="text-lg font-bold mb-2">Photography Tours</h3>
             <p className="text-muted-foreground text-sm">
@@ -172,8 +172,8 @@ export function SafariSection() {
           </Card>
 
           <Card className="text-center p-6 border-0 shadow-soft bg-card/50 backdrop-blur-sm">
-            <div className="w-16 h-16 mx-auto bg-gradient-hero rounded-full flex items-center justify-center mb-4">
-              <Users className="h-8 w-8 text-white" />
+              <div className="w-16 h-16 mx-auto bg-gradient-hero rounded-full flex items-center justify-center mb-4">
+              <Users className="h-8 w-8 text-black" />
             </div>
             <h3 className="text-lg font-bold mb-2">Small Groups</h3>
             <p className="text-muted-foreground text-sm">

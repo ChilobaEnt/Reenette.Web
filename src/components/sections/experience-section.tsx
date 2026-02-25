@@ -67,7 +67,7 @@ export function ExperienceSection() {
                 <CardContent className="p-6 text-center">
                   <div className="relative mb-4">
                     <div className="w-16 h-16 mx-auto bg-gradient-hero rounded-full flex items-center justify-center mb-3 group-hover:shadow-glow transition-all duration-300">
-                      <IconComponent className="h-8 w-8 text-white" />
+                      <IconComponent className="h-8 w-8 text-black" />
                     </div>
                     <Badge
                       variant="secondary"

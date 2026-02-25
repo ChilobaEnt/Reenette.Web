@@ -185,7 +185,7 @@ export function ContactSection() {
                   >
                     <CardContent className="p-6 text-center">
                       <div className="w-12 h-12 mx-auto bg-gradient-hero rounded-full flex items-center justify-center mb-4">
-                        <IconComponent className="h-6 w-6 text-white" />
+                        <IconComponent className="h-6 w-6 text-black" />
                       </div>
                       <h3 className="font-bold mb-2">{info.title}</h3>
                       <p className="font-medium text-primary mb-1">{info.value}</p>
@@ -197,7 +197,7 @@ export function ContactSection() {
             </div>
 
             {/* Additional Info Card */}
-            <Card className="border-0 shadow-adventure bg-gradient-hero text-white">
+            <Card className="border-0 shadow-adventure bg-gradient-hero text-black">
               <CardContent className="p-8 text-center">
                 <h3 className="text-2xl font-bold mb-4">Ready to Explore?</h3>
                 <p className="mb-6 opacity-90">

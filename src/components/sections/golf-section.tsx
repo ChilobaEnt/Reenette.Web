@@ -216,8 +216,8 @@ export function GolfSection() {
         {/* Golf Features */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <Card className="text-center p-6 border-0 shadow-soft bg-card/50 backdrop-blur-sm">
-            <div className="w-16 h-16 mx-auto bg-gradient-hero rounded-full flex items-center justify-center mb-4">
-              <Trophy className="h-8 w-8 text-white" />
+              <div className="w-16 h-16 mx-auto bg-gradient-hero rounded-full flex items-center justify-center mb-4">
+              <Trophy className="h-8 w-8 text-black" />
             </div>
             <h3 className="text-lg font-bold mb-2">Championship Courses</h3>
             <p className="text-muted-foreground text-sm">
@@ -227,7 +227,7 @@ export function GolfSection() {
 
           <Card className="text-center p-6 border-0 shadow-soft bg-card/50 backdrop-blur-sm">
             <div className="w-16 h-16 mx-auto bg-gradient-hero rounded-full flex items-center justify-center mb-4">
-              <Users className="h-8 w-8 text-white" />
+              <Users className="h-8 w-8 text-black" />
             </div>
             <h3 className="text-lg font-bold mb-2">Professional Caddies</h3>
             <p className="text-muted-foreground text-sm">
@@ -237,7 +237,7 @@ export function GolfSection() {
 
           <Card className="text-center p-6 border-0 shadow-soft bg-card/50 backdrop-blur-sm">
             <div className="w-16 h-16 mx-auto bg-gradient-hero rounded-full flex items-center justify-center mb-4">
-              <Calendar className="h-8 w-8 text-white" />
+              <Calendar className="h-8 w-8 text-black" />
             </div>
             <h3 className="text-lg font-bold mb-2">Year-Round Play</h3>
             <p className="text-muted-foreground text-sm">
