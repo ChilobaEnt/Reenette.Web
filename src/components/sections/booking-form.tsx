@@ -19,7 +19,7 @@ export function BookingForm({ tour, onSuccess }: BookingFormProps) {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+    // allow native form submission to FormSubmit (opens in new tab), but still set local submitted state
     setSubmitted(true);
     onSuccess?.();
   };
@@ -38,11 +38,10 @@ export function BookingForm({ tour, onSuccess }: BookingFormProps) {
   return (
     <form
       onSubmit={handleSubmit}
+      action="https://formsubmit.co/info@reenette.com"
       method="POST"
-      data-netlify="true"
-      name="tour-booking"
+      target="_blank"
       className="space-y-6"
-      netlify-honeypot="bot-field"
     >
       {/* Tour Info - Hidden Fields */}
       <input type="hidden" name="form-name" value="tour-booking" />
@@ -75,7 +74,7 @@ export function BookingForm({ tour, onSuccess }: BookingFormProps) {
         </label>
         <Input
           id="email"
-          name="email"
+          name="Client"
           type="email"
           required
           placeholder="Enter your email address"

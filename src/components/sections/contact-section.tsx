@@ -5,7 +5,6 @@ import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Mail, Phone, MapPin, Clock, Send, Star } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
 
 const contactInfo = [
   {
@@ -41,32 +40,12 @@ export function ContactSection() {
     destination: '',
     message: ''
   });
-  const { toast } = useToast();
-
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
       [name]: value
     }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Simulate form submission
-    toast({
-      title: "Message Sent Successfully!",
-      description: "Our travel experts will get back to you soon.",
-    });
-
-    // Reset form
-    setFormData({
-      name: '',
-      email: '',
-      destination: '',
-      message: ''
-    });
   };
 
   return (
@@ -90,16 +69,16 @@ export function ContactSection() {
           {/* Contact Form */}
           <Card className="shadow-adventure border-0 bg-card/50 backdrop-blur-sm">
             <CardHeader>
-              <CardTitle className="text-2xl font-bold flex items-center">
-                <Send className="h-6 w-6 mr-2 text-primary" />
-                Get In Touch
-                <Badge className="ml-3 bg-accent text-accent-foreground">
-                  Free Consultation
-                </Badge>
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <form onSubmit={handleSubmit} className="space-y-6">
+                <CardTitle className="text-2xl font-bold flex items-center">
+                  <Send className="h-6 w-6 mr-2 text-primary" />
+                  Get In Touch
+                  <Badge className="ml-3 bg-accent text-accent-foreground">
+                    Free Consultation
+                  </Badge>
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <form action="https://formsubmit.co/info@reenette.com" method="POST" target="_blank" className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium mb-2">
@@ -119,8 +98,8 @@ export function ContactSection() {
                       Email Address *
                     </label>
                     <Input
-                      type="email"
-                      name="email"
+                        type="email"
+                        name="Client"
                       value={formData.email}
                       onChange={handleInputChange}
                       placeholder="john@example.com"
