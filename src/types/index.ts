@@ -18,6 +18,15 @@ export interface Tour {
   highlights: string[];
 }
 
+export interface Review {
+  id: number;
+  tour_id: number;
+  user_id?: number | null;
+  rating: number;
+  comment?: string | null;
+  created_at: string;
+}
+
 export interface Booking {
   id: number;
   user_id: number;

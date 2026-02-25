@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { MapPin, Star, Clock, Binoculars, Camera, Users } from 'lucide-react';
+import Reviews from '@/components/reviews/Reviews';
 import { ErrorBoundary } from '@/components/ui/error-boundary';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { BookingForm } from './booking-form';
@@ -113,8 +114,14 @@ export function SafariSection() {
                     <span className="text-sm">{tour.location}</span>
                   </div>
                   <div className="flex items-center">
-                    <Star className="h-4 w-4 text-accent mr-1 fill-current" />
-                    <span className="text-sm font-medium">{tour.rating}</span>
+                    {/* live reviews (average) */}
+                    <div className="mr-2">
+                      {/* Reviews component displays avg rating and can show full list when enabled */}
+                      {/* render inline average */}
+                      {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+                      {/* @ts-ignore */}
+                      <Reviews tourId={tour.id} />
+                    </div>
                   </div>
                 </div>
 

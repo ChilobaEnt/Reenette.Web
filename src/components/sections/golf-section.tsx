@@ -3,6 +3,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { MapPin, Star, Clock, Trophy, Calendar, Users } from 'lucide-react';
+import Reviews from '@/components/reviews/Reviews';
 import { GolfToursModal } from './golf-tours-modal';
 import { ErrorBoundary } from '@/components/ui/error-boundary';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
@@ -124,8 +125,10 @@ export function GolfSection() {
                     <span className="text-sm">{tour.location}</span>
                   </div>
                   <div className="flex items-center">
-                    <Star className="h-4 w-4 text-accent mr-1 fill-current" />
-                    <span className="text-sm font-medium">{tour.rating}</span>
+                    {/* inline live reviews average */}
+                    {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+                    {/* @ts-ignore */}
+                    <Reviews tourId={tour.id} />
                   </div>
                 </div>
 
