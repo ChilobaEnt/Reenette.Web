@@ -47,7 +47,7 @@ export function DestinationsSection() {
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Featured{' '}
-            <span className="bg-gradient-sunset bg-clip-text text-transparent">
+            <span className="text-white">
               Destinations
             </span>
           </h2>
