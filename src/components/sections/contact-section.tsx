@@ -78,7 +78,28 @@ export function ContactSection() {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
-                <form action="https://formsubmit.co/info@reenette.com" method="POST" target="_blank" className="space-y-6">
+                <form action="https://formsubmit.co/info@reenette.com" method="POST" target="_blank" className="space-y-6"
+                  onSubmit={async (e) => {
+                    try {
+                      const form = new FormData(e.currentTarget);
+                      // build payload matching our server function
+                      const payload = {
+                        name: form.get('name'),
+                        Client: form.get('Client'),
+                        destination: form.get('destination'),
+                        message: form.get('message')
+                      };
+                      // fire-and-forget POST to our Netlify function
+                      fetch('/.netlify/functions/postContact', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                      }).catch((err) => console.error('contact save failed', err));
+                    } catch (err) {
+                      console.error(err);
+                    }
+                  }}
+                >
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
                     <label className="block text-sm font-medium mb-2">

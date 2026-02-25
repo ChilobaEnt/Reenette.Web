@@ -19,7 +19,29 @@ export function BookingForm({ tour, onSuccess }: BookingFormProps) {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    // allow native form submission to FormSubmit (opens in new tab), but still set local submitted state
+    try {
+      const form = new FormData(e.currentTarget);
+      const payload = {
+        name: form.get('name'),
+        Client: form.get('Client'),
+        'tour-id': form.get('tour-id'),
+        'tour-name': form.get('tour-name'),
+        'preferred-date': form.get('preferred-date'),
+        participants: form.get('participants'),
+        'special-requests': form.get('special-requests')
+      };
+
+      // send to backend function (fire-and-forget)
+      fetch('/.netlify/functions/postBookingRequest', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      }).catch((err) => console.error('booking save failed', err));
+    } catch (err) {
+      console.error(err);
+    }
+
+    // continue with existing UI behavior and FormSubmit (form has target _blank)
     setSubmitted(true);
     onSuccess?.();
   };
