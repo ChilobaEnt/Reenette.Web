@@ -40,6 +40,28 @@ export async function handler(event) {
       }
     }
 
+    // Forward to FormSubmit programmatically (server-side)
+    try {
+      const formSubmitEndpoint = `https://formsubmit.co/${process.env.NOTIFY_EMAIL || 'info@reenette.com'}`;
+      const params = new URLSearchParams();
+      params.append('name', name || '');
+      params.append('Client', email || '');
+      params.append('tour-id', tourId || '');
+      params.append('tour-name', tourName || '');
+      params.append('preferred-date', preferredDate || '');
+      params.append('participants', participants || '');
+      params.append('special-requests', specialRequests || '');
+
+      const res = await fetch(formSubmitEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params.toString()
+      });
+      if (!res.ok) console.error('FormSubmit forward failed (booking):', res.status);
+    } catch (forwardErr) {
+      console.error('FormSubmit forward error (booking):', forwardErr);
+    }
+
     return { statusCode: 201, body: JSON.stringify({ success: true }) };
   } catch (err) {
     console.error(err);

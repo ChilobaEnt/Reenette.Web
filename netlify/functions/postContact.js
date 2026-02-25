@@ -37,6 +37,26 @@ export async function handler(event) {
       }
     }
 
+    // Forward to FormSubmit programmatically (server-side)
+    try {
+      const formSubmitEndpoint = `https://formsubmit.co/${process.env.NOTIFY_EMAIL || 'info@reenette.com'}`;
+      const params = new URLSearchParams();
+      params.append('name', name || '');
+      params.append('Client', email || '');
+      params.append('destination', destination || '');
+      params.append('message', message || '');
+
+      // server-side POST; FormSubmit may still require activation for the recipient
+      const res = await fetch(formSubmitEndpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: params.toString()
+      });
+      if (!res.ok) console.error('FormSubmit forward failed (contact):', res.status);
+    } catch (forwardErr) {
+      console.error('FormSubmit forward error (contact):', forwardErr);
+    }
+
     return { statusCode: 201, body: JSON.stringify({ success: true }) };
   } catch (err) {
     console.error(err);
