@@ -188,7 +188,18 @@ export function ContactSection() {
                         <IconComponent className="h-6 w-6 text-black" />
                       </div>
                       <h3 className="font-bold mb-2">{info.title}</h3>
-                      <p className="font-medium text-primary mb-1">{info.value}</p>
+                      {info.title === 'Email Us' ? (
+                        <p className="font-medium mb-1">
+                          <a
+                            href={`mailto:${info.value}`}
+                            className="text-primary hover:underline"
+                          >
+                            {info.value}
+                          </a>
+                        </p>
+                      ) : (
+                        <p className="font-medium text-primary mb-1">{info.value}</p>
+                      )}
                       <p className="text-sm text-muted-foreground">{info.description}</p>
                     </CardContent>
                   </Card>

@@ -211,7 +211,7 @@ export const ReviewsSection = () => {
               {reviews.map((review) => (
                 <CarouselItem key={review.id}>
                   <Card className="border-0 shadow-lg">
-                    <CardContent className="p-8">
+                    <CardContent className="p-8 text-black">
                       <div className="flex gap-1 mb-4">
                         {[...Array(5)].map((_, i) => (
                           <Star
@@ -224,14 +224,14 @@ export const ReviewsSection = () => {
                           />
                         ))}
                       </div>
-                      <p className="text-lg mb-6 italic text-foreground">"{review.text}"</p>
+                      <p className="text-lg mb-6 italic text-black">"{review.text}"</p>
                       <div>
-                        <p className="font-semibold text-lg">{review.author}</p>
+                        <p className="font-semibold text-lg text-black">{review.author}</p>
                         {review.tour && (
-                          <p className="text-sm text-muted-foreground">{review.tour}</p>
+                          <p className="text-sm text-black">{review.tour}</p>
                         )}
                         {review.date && (
-                          <p className="text-xs text-muted-foreground mt-1">{review.date}</p>
+                          <p className="text-xs text-black mt-1">{review.date}</p>
                         )}
                       </div>
                     </CardContent>
