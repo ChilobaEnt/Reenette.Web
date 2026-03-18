@@ -132,7 +132,7 @@ export const ReviewsSection = () => {
             <CardHeader>
               <CardTitle>Share Your Review</CardTitle>
             </CardHeader>
-            <CardContent>
+            <CardContent className="text-black">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
@@ -146,12 +146,12 @@ export const ReviewsSection = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium mb-2">Tour/Experience (Optional)</label>
+                    <label className="block text-sm font-medium mb-2">Tour (optional)</label>
                     <Input
                       name="tour"
                       value={formData.tour}
                       onChange={handleInputChange}
-                      placeholder="e.g., Maasai Mara Safari"
+                      placeholder="Tour name (optional)"
                       className="w-full"
                     />
                   </div>
@@ -210,8 +210,8 @@ export const ReviewsSection = () => {
             <CarouselContent>
               {reviews.map((review) => (
                 <CarouselItem key={review.id}>
-                  <Card className="border-0 shadow-lg">
-                    <CardContent className="p-8 text-black">
+                    <Card className="bg-white text-black border-0 shadow-lg rounded-lg">
+                      <CardContent className="p-8 text-black">
                       <div className="flex gap-1 mb-4">
                         {[...Array(5)].map((_, i) => (
                           <Star

@@ -36,7 +36,7 @@ const contactInfo = [
 export function ContactSection() {
   const [formData, setFormData] = useState({
     name: '',
-    email: '',
+    Client: '',
     destination: '',
     message: ''
   });
@@ -119,9 +119,9 @@ export function ContactSection() {
                       Email Address *
                     </label>
                     <Input
-                        type="email"
-                        name="Client"
-                      value={formData.email}
+                      type="email"
+                      name="Client"
+                      value={formData.Client}
                       onChange={handleInputChange}
                       placeholder="john@example.com"
                       required
@@ -188,18 +188,7 @@ export function ContactSection() {
                         <IconComponent className="h-6 w-6 text-black" />
                       </div>
                       <h3 className="font-bold mb-2">{info.title}</h3>
-                      {info.title === 'Email Us' ? (
-                        <p className="font-medium mb-1">
-                          <a
-                            href={`mailto:${info.value}`}
-                            className="text-primary hover:underline"
-                          >
-                            {info.value}
-                          </a>
-                        </p>
-                      ) : (
-                        <p className="font-medium text-primary mb-1">{info.value}</p>
-                      )}
+                      <p className="font-medium text-primary mb-1">{info.value}</p>
                       <p className="text-sm text-muted-foreground">{info.description}</p>
                     </CardContent>
                   </Card>
