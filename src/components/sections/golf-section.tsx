@@ -125,10 +125,10 @@ export function GolfSection() {
                     <span className="text-sm">{tour.location}</span>
                   </div>
                   <div className="flex items-center">
-                    {/* inline live reviews average; fall back to tour.rating when no reviews exist */}
+                    {/* inline live reviews average */}
                     {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                     {/* @ts-ignore */}
-                    <Reviews tourId={tour.id} initialRating={tour.rating} />
+                    <Reviews tourId={tour.id} />
                   </div>
                 </div>
 
