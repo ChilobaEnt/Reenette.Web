@@ -117,10 +117,10 @@ export function SafariSection() {
                     {/* live reviews (average) */}
                     <div className="mr-2">
                       {/* Reviews component displays avg rating and can show full list when enabled */}
-                      {/* render inline average */}
+                      {/* render inline average; fall back to tour.rating when no reviews exist */}
                       {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
                       {/* @ts-ignore */}
-                      <Reviews tourId={tour.id} />
+                      <Reviews tourId={tour.id} initialRating={tour.rating} />
                     </div>
                   </div>
                 </div>

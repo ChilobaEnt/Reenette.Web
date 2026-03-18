@@ -10,7 +10,7 @@ export interface Review {
   created_at: string;
 }
 
-export function Reviews({ tourId, showList = false }:{tourId:number; showList?:boolean}) {
+export function Reviews({ tourId, showList = false, initialRating = 0 }:{tourId:number; showList?:boolean; initialRating?: number}) {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -39,6 +39,7 @@ export function Reviews({ tourId, showList = false }:{tourId:number; showList?:b
   }, [tourId]);
 
   const avg = reviews.length ? (reviews.reduce((s,r)=>s+Number(r.rating),0)/reviews.length) : 0;
+  const displayRating = avg || initialRating || 0;
 
   const submitReview = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,7 +63,7 @@ export function Reviews({ tourId, showList = false }:{tourId:number; showList?:b
   return (
     <div className="flex items-center space-x-2">
       <Star className="h-4 w-4 text-accent fill-current" />
-      <span className="text-sm font-medium">{(avg || 0).toFixed(1)}</span>
+      <span className="text-sm font-medium">{displayRating.toFixed(1)}</span>
       {showList && (
         <div className="mt-3 w-full">
           {loading && <div className="text-sm text-muted-foreground">Loading reviews...</div>}
