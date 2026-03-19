@@ -35,7 +35,7 @@ const internationalTours = [
     rating: 4.7,
     description: 'Experience dramatic links courses along Ireland\'s stunning coastline.',
     highlights: ['Links Courses', 'Irish Culture', 'Dublin City', 'Traditional Pubs'],
-    image: 'https://images.unsplash.com/photo-1551526826-b2bb53a6de96?w=400&h=250&fit=crop'
+    image: 'https://www.premiergolf.com/wp-content/uploads/2024/01/DJI_0999_gb4tcb.jpg'
   }
 ];
 
@@ -48,7 +48,7 @@ const localTours = [
     rating: 4.6,
     description: 'Combine golf with gorilla trekking in the Pearl of Africa.',
     highlights: ['Gorilla Trekking', 'Lake Victoria', 'Kampala Golf Club', 'Cultural Tours'],
-    image: 'https://images.unsplash.com/photo-1547970810-dc1eacd77b8b?w=400&h=250&fit=crop'
+    image: 'https://journeysuganda.com/wp-content/uploads/2025/10/Screenshot_4.jpg'
   },
   {
     id: 5,
