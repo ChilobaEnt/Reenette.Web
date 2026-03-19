@@ -3,6 +3,7 @@ import { Facebook, Instagram, Twitter, Youtube, Mail, MapPin, Phone } from 'luci
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { CookiePolicyModal } from '@/components/ui/cookie-policy-modal';
+import { PrivacyPolicyModal } from '@/components/ui/privacy-policy-modal';
 
 const footerLinks = {
   destinations: [
@@ -22,7 +23,6 @@ const footerLinks = {
     'Cultural Experiences'
   ],
   support: [
-    'Help Center',
     'Booking Terms',
     'Privacy Policy',
     'Cookie Policy',
@@ -39,10 +39,15 @@ const socialLinks = [
 
 export function Footer() {
   const [isCookiePolicyOpen, setIsCookiePolicyOpen] = useState(false);
+  const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false);
 
   const handleLinkClick = (link: string) => {
     if (link === 'Cookie Policy') {
       setIsCookiePolicyOpen(true);
+    }
+
+    if (link === 'Privacy Policy') {
+      setIsPrivacyPolicyOpen(true);
     }
   };
 
@@ -175,6 +180,12 @@ export function Footer() {
       <CookiePolicyModal 
         isOpen={isCookiePolicyOpen} 
         onClose={() => setIsCookiePolicyOpen(false)} 
+      />
+      {/* Privacy Policy Modal */}
+      {/* Imported lazily below to avoid extra bundle cost if desired */}
+      <PrivacyPolicyModal
+        isOpen={isPrivacyPolicyOpen}
+        onClose={() => setIsPrivacyPolicyOpen(false)}
       />
     </footer>
   );
