@@ -10,7 +10,7 @@ export interface Review {
   created_at: string;
 }
 
-export function Reviews({ tourId, showList = false }:{tourId:number; showList?:boolean}) {
+export function Reviews({ tourId, showList = false, fallbackRating }: {tourId:number; showList?:boolean; fallbackRating?: number}) {
   const [reviews, setReviews] = useState<Review[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -38,7 +38,7 @@ export function Reviews({ tourId, showList = false }:{tourId:number; showList?:b
     return () => clearInterval(id);
   }, [tourId]);
 
-  const avg = reviews.length ? (reviews.reduce((s,r)=>s+Number(r.rating),0)/reviews.length) : 0;
+  const avg = reviews.length ? (reviews.reduce((s,r)=>s+Number(r.rating),0)/reviews.length) : (typeof fallbackRating === 'number' ? fallbackRating : 0);
 
   const submitReview = async (e: React.FormEvent) => {
     e.preventDefault();

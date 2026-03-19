@@ -125,10 +125,8 @@ export function GolfSection() {
                     <span className="text-sm">{tour.location}</span>
                   </div>
                   <div className="flex items-center">
-                    {/* inline live reviews average */}
-                    {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
-                    {/* @ts-ignore */}
-                    <Reviews tourId={tour.id} />
+                      {/* inline live reviews average (falls back to static tour rating when no reviews) */}
+                      <Reviews tourId={tour.id} fallbackRating={tour.rating} />
                   </div>
                 </div>
 
