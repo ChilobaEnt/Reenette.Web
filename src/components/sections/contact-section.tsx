@@ -23,13 +23,13 @@ const contactInfo = [
     icon: MapPin,
     title: 'Visit Kenya',
     value: 'Nairobi, Kenya',
-    description: 'Explore East Africa with us'
+    description: ''
   },
   {
     icon: Clock,
     title: 'Office Hours',
     value: 'Mon - Fri: 8:00 - 5:00',
-    description: 'We\'re here to help'
+    description: ''
   }
 ];
 

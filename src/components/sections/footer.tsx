@@ -91,7 +91,7 @@ export function Footer() {
             </div>
             <p className="mb-6 opacity-90 leading-relaxed">
               Reenette Tours and Travel Ltd. is a premier East African specialty safari provider 
-              offering personalized, unforgettable travel experiences across Kenya since 1999.
+              offering personalized, unforgettable travel experiences across Kenya since 2020.
             </p>
             <div className="space-y-3">
               <div className="flex items-center">
