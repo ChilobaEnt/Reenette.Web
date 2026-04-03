@@ -31,9 +31,9 @@ const experiences = [
 
 const stats = [
   { number: '15+', label: 'Safari Destinations' },
-  { number: '12+', label: 'Golf Courses' },
-  { number: '400+', label: 'Happy Travelers' },
-  { number: '99%', label: 'Satisfaction Rate' }
+  { number: '18+', label: 'Golf Courses' },
+  { number: '230+', label: 'Happy Travelers' },
+  { number: '95%', label: 'Satisfaction Rate' }
 ];
 
 export function ExperienceSection() {
