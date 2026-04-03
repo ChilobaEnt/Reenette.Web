@@ -64,17 +64,70 @@ export function Footer() {
               Join our newsletter and receive special offers, expert travel tips, and first access to new tours.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <Input
-                type="email"
-                placeholder="Enter your email for exclusive offers"
-                className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60"
-              />
-              <Button
-                variant="secondary"
-                className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-glow"
+              <form
+                id="newsletter-form"
+                className="flex w-full"
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  const form = new FormData(e.currentTarget as HTMLFormElement);
+                  const email = String(form.get('email') || '').trim();
+                  if (!email) return alert('Please enter your email address');
+
+                  try {
+                    // try serverless function first
+                    const res = await fetch('/.netlify/functions/postNewsletter', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ email })
+                    });
+
+                    if (res.ok) {
+                      alert('Thanks — you are subscribed. We will send updates to info@reenette.com');
+                      (document.getElementById('newsletter-form') as HTMLFormElement).reset();
+                      return;
+                    }
+                  } catch (err) {
+                    console.error('Newsletter function error', err);
+                  }
+
+                  // fallback to FormSubmit (in case serverless isn't configured)
+                  const formSubmitEndpoint = 'https://formsubmit.co/info@reenette.com';
+                  const params = new URLSearchParams();
+                  params.append('Client', email);
+                  params.append('message', 'Newsletter subscription');
+                  try {
+                    const res2 = await fetch(formSubmitEndpoint, {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                      body: params.toString()
+                    });
+                    if (res2.ok) {
+                      alert('Thanks — you are subscribed. We will send updates to info@reenette.com');
+                      (document.getElementById('newsletter-form') as HTMLFormElement).reset();
+                    } else {
+                      alert('Subscription failed — please email info@reenette.com directly');
+                    }
+                  } catch (err) {
+                    console.error('FormSubmit fallback error', err);
+                    alert('Subscription failed — please email info@reenette.com directly');
+                  }
+                }}
               >
-                Get Exclusive Deals
-              </Button>
+                <Input
+                  name="email"
+                  type="email"
+                  placeholder="Enter your email for exclusive offers"
+                  className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60 flex-1"
+                  required
+                />
+                <Button
+                  type="submit"
+                  variant="secondary"
+                  className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-glow ml-3"
+                >
+                  Get Exclusive Deals
+                </Button>
+              </form>
             </div>
           </div>
         </div>
