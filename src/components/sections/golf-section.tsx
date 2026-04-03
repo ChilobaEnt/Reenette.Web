@@ -84,7 +84,7 @@ export function GolfSection() {
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Championship{' '}
+            Local and International{' '}
             <span className="text-white">
               Golf Tours
             </span>
@@ -171,7 +171,7 @@ export function GolfSection() {
               size="lg"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300"
             >
-              Premium Golf Tours
+              Local & International Golf Tours
             </Button>
           </GolfToursModal>
         </div>

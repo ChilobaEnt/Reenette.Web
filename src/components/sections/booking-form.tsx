@@ -4,7 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Calendar } from '@/components/ui/calendar';
 import { CalendarIcon } from 'lucide-react';
-import { format } from 'date-fns';
+import { format, startOfDay } from 'date-fns';
 import { cn } from '@/lib/utils';
 import type { Tour } from '@/types';
 
@@ -127,11 +127,19 @@ export function BookingForm({ tour, onSuccess }: BookingFormProps) {
                 mode="single"
                 selected={selectedDate}
                 onSelect={(date) => {
-                  setSelectedDate(date);
+                  // `date` may be undefined or an array depending on DayPicker usage —
+                  // ensure we store a single Date instance when selected.
+                  if (!date) return;
+                  if (Array.isArray(date)) {
+                    setSelectedDate(date[0] as Date);
+                  } else {
+                    setSelectedDate(date as Date);
+                  }
                   setShowCalendar(false);
                 }}
                 disabled={(date) =>
-                  date < new Date() || date > new Date(2025, 11, 31)
+                  // disable dates strictly before today (allow today) and after 31 Dec 2025
+                  date < startOfDay(new Date()) || date > new Date(2025, 11, 31)
                 }
                 initialFocus
               />

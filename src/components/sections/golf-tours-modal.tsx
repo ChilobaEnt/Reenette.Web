@@ -149,26 +149,26 @@ export function GolfToursModal({ children }: GolfToursModalProps) {
       <DialogContent className="max-w-6xl max-h-[90vh] overflow-hidden">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center">
-            Premium Golf Tours
+            Local and International Golf Tours
           </DialogTitle>
         </DialogHeader>
         
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-2 mb-6">
+            <TabsList className="grid w-full grid-cols-2 mb-6">
             <TabsTrigger value="international" className="flex items-center gap-2">
               <Plane className="h-4 w-4" />
               International Tours
             </TabsTrigger>
             <TabsTrigger value="local" className="flex items-center gap-2">
               <Trophy className="h-4 w-4" />
-              East Africa Tours
+              Local Tours
             </TabsTrigger>
           </TabsList>
 
           <div className="overflow-y-auto max-h-[60vh]">
             <TabsContent value="international" className="space-y-4">
               <div className="text-center mb-6">
-                <h3 className="text-xl font-bold mb-2">World-Class Golf Destinations</h3>
+                <h3 className="text-xl font-bold mb-2">International Golf Destinations</h3>
                 <p className="text-muted-foreground">
                   Experience legendary courses and luxury accommodations worldwide
                 </p>
@@ -180,9 +180,9 @@ export function GolfToursModal({ children }: GolfToursModalProps) {
 
             <TabsContent value="local" className="space-y-4">
               <div className="text-center mb-6">
-                <h3 className="text-xl font-bold mb-2">East African Golf Adventures</h3>
+                <h3 className="text-xl font-bold mb-2">Local Golf Tours</h3>
                 <p className="text-muted-foreground">
-                  Combine exceptional golf with unique African experiences
+                  Combine exceptional golf with unique regional experiences
                 </p>
               </div>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
