@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Facebook, Instagram, Twitter, Youtube, Mail, MapPin, Phone } from 'lucide-react';
+import { Instagram, Youtube, Mail, MapPin, Phone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { CookiePolicyModal } from '@/components/ui/cookie-policy-modal';
@@ -23,23 +23,30 @@ const footerLinks = {
     'Cultural Experiences'
   ],
   support: [
-    'Booking Terms',
     'Privacy Policy',
-    'Cookie Policy',
-    'Contact Support'
+    'Cookie Policy'
   ]
 };
 
 const socialLinks = [
-  { icon: Facebook, href: '#', label: 'Facebook' },
-  { icon: Instagram, href: '#', label: 'Instagram' },
-  { icon: Twitter, href: '#', label: 'Twitter' },
+  { icon: Instagram, href: 'https://www.instagram.com/reenette_toursntravel?igsh=MW9qbWJsZTBsdmhzZQ==', label: 'Instagram' },
   { icon: Youtube, href: '#', label: 'YouTube' }
 ];
 
 export function Footer() {
   const [isCookiePolicyOpen, setIsCookiePolicyOpen] = useState(false);
   const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false);
+  
+  const handleNewsletterSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const form = e.currentTarget;
+    try {
+      const emailInput = form.querySelector('input[name="email"]') as HTMLInputElement | null;
+      const replyInput = form.querySelector('input[name="_replyto"]') as HTMLInputElement | null;
+      if (emailInput && replyInput) replyInput.value = emailInput.value || '';
+    } catch (err) {
+      // swallow -- best-effort copy
+    }
+  };
 
   const handleLinkClick = (link: string) => {
     if (link === 'Cookie Policy') {
@@ -66,67 +73,31 @@ export function Footer() {
             <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
               <form
                 id="newsletter-form"
+                action="https://formsubmit.co/info@reenette.com"
+                method="POST"
                 className="flex w-full"
-                onSubmit={async (e) => {
-                  e.preventDefault();
-                  const form = new FormData(e.currentTarget as HTMLFormElement);
-                  const email = String(form.get('email') || '').trim();
-                  if (!email) return alert('Please enter your email address');
-
-                  try {
-                    // try serverless function first
-                    const res = await fetch('/.netlify/functions/postNewsletter', {
-                      method: 'POST',
-                      headers: { 'Content-Type': 'application/json' },
-                      body: JSON.stringify({ email })
-                    });
-
-                    if (res.ok) {
-                      alert('Thanks — you are subscribed. We will send updates to info@reenette.com');
-                      (document.getElementById('newsletter-form') as HTMLFormElement).reset();
-                      return;
-                    }
-                  } catch (err) {
-                    console.error('Newsletter function error', err);
-                  }
-
-                  // fallback to FormSubmit (in case serverless isn't configured)
-                  const formSubmitEndpoint = 'https://formsubmit.co/info@reenette.com';
-                  const params = new URLSearchParams();
-                  params.append('Client', email);
-                  params.append('message', 'Newsletter subscription');
-                  try {
-                    const res2 = await fetch(formSubmitEndpoint, {
-                      method: 'POST',
-                      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                      body: params.toString()
-                    });
-                    if (res2.ok) {
-                      alert('Thanks — you are subscribed. We will send updates to info@reenette.com');
-                      (document.getElementById('newsletter-form') as HTMLFormElement).reset();
-                    } else {
-                      alert('Subscription failed — please email info@reenette.com directly');
-                    }
-                  } catch (err) {
-                    console.error('FormSubmit fallback error', err);
-                    alert('Subscription failed — please email info@reenette.com directly');
-                  }
-                }}
+                onSubmit={handleNewsletterSubmit}
               >
-                <Input
+                <input type="hidden" name="_subject" value="New newsletter subscription" />
+                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_next" value="https://reenette.com/?newsletter=thanks" />
+                <input type="hidden" name="_replyto" value="" />
+                <input type="hidden" name="_autoresponse" value="Thanks for subscribing to Reenette Tours! We'll send the best travel deals to your inbox." />
+
+                <input
                   name="email"
                   type="email"
                   placeholder="Enter your email for exclusive offers"
-                  className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60 flex-1"
                   required
+                  className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60 flex-1 px-3 py-2 rounded"
                 />
-                <Button
+
+                <button
                   type="submit"
-                  variant="secondary"
-                  className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-glow ml-3"
+                  className="ml-3 bg-accent hover:bg-accent/90 text-accent-foreground px-4 py-2 rounded"
                 >
                   Get Exclusive Deals
-                </Button>
+                </button>
               </form>
             </div>
           </div>
@@ -189,6 +160,7 @@ export function Footer() {
           {/* Support */}
           <div>
             <h4 className="font-bold text-lg mb-4">Support</h4>
+
             <ul className="space-y-2">
               {footerLinks.support.map((link) => (
                 <li key={link}>
@@ -201,6 +173,28 @@ export function Footer() {
                 </li>
               ))}
             </ul>
+
+            <div className="mt-6">
+              <h5 className="font-medium mb-3">Contact Support</h5>
+              <ul className="space-y-3 text-sm">
+                <li className="flex items-center">
+                  <Phone className="h-5 w-5 mr-3 text-accent" />
+                  <span>+254 777753195 (WhatsApp)</span>
+                </li>
+                <li className="flex items-center">
+                  <Mail className="h-5 w-5 mr-3 text-accent" />
+                  <a href="mailto:info@reenette.com" className="underline hover:text-accent">info@reenette.com</a>
+                </li>
+                <li className="flex items-center">
+                  <Instagram className="h-5 w-5 mr-3 text-accent" />
+                  <a href={socialLinks.find(s => s.label === 'Instagram')?.href || '#'} target="_blank" rel="noreferrer" className="underline hover:text-accent">Instagram</a>
+                </li>
+                <li className="flex items-center">
+                  <Youtube className="h-5 w-5 mr-3 text-accent" />
+                  <a href={socialLinks.find(s => s.label === 'YouTube')?.href || '#'} target="_blank" rel="noreferrer" className="underline hover:text-accent">YouTube</a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
