@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { CookiePolicyModal } from '@/components/ui/cookie-policy-modal';
 import { PrivacyPolicyModal } from '@/components/ui/privacy-policy-modal';
+import { ContactSupportModal } from '@/components/ui/contact-support-modal';
 
 const footerLinks = {
   destinations: [
@@ -24,7 +25,8 @@ const footerLinks = {
   ],
   support: [
     'Privacy Policy',
-    'Cookie Policy'
+    'Cookie Policy',
+    'Contact Support'
   ]
 };
 
@@ -36,6 +38,7 @@ const socialLinks = [
 export function Footer() {
   const [isCookiePolicyOpen, setIsCookiePolicyOpen] = useState(false);
   const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false);
+  const [isContactSupportOpen, setIsContactSupportOpen] = useState(false);
   
   const handleNewsletterSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     const form = e.currentTarget;
@@ -55,6 +58,9 @@ export function Footer() {
 
     if (link === 'Privacy Policy') {
       setIsPrivacyPolicyOpen(true);
+    }
+    if (link === 'Contact Support') {
+      setIsContactSupportOpen(true);
     }
   };
 
@@ -174,27 +180,7 @@ export function Footer() {
               ))}
             </ul>
 
-            <div className="mt-6">
-              <h5 className="font-medium mb-3">Contact Support</h5>
-              <ul className="space-y-3 text-sm">
-                <li className="flex items-center">
-                  <Phone className="h-5 w-5 mr-3 text-accent" />
-                  <span>+254 777753195 (WhatsApp)</span>
-                </li>
-                <li className="flex items-center">
-                  <Mail className="h-5 w-5 mr-3 text-accent" />
-                  <a href="mailto:info@reenette.com" className="underline hover:text-accent">info@reenette.com</a>
-                </li>
-                <li className="flex items-center">
-                  <Instagram className="h-5 w-5 mr-3 text-accent" />
-                  <a href={socialLinks.find(s => s.label === 'Instagram')?.href || '#'} target="_blank" rel="noreferrer" className="underline hover:text-accent">Instagram</a>
-                </li>
-                <li className="flex items-center">
-                  <Youtube className="h-5 w-5 mr-3 text-accent" />
-                  <a href={socialLinks.find(s => s.label === 'YouTube')?.href || '#'} target="_blank" rel="noreferrer" className="underline hover:text-accent">YouTube</a>
-                </li>
-              </ul>
-            </div>
+            {/* Contact Support modal will open from the Support list */}
           </div>
         </div>
 
@@ -233,6 +219,12 @@ export function Footer() {
       <PrivacyPolicyModal
         isOpen={isPrivacyPolicyOpen}
         onClose={() => setIsPrivacyPolicyOpen(false)}
+      />
+      <ContactSupportModal
+        isOpen={isContactSupportOpen}
+        onClose={() => setIsContactSupportOpen(false)}
+        instagramHref={socialLinks.find(s => s.label === 'Instagram')?.href}
+        youtubeHref={socialLinks.find(s => s.label === 'YouTube')?.href}
       />
     </footer>
   );
