@@ -14,6 +14,7 @@ export function Navigation({ className }: NavigationProps) {
     { label: 'Home', href: '#home' },
     { label: 'Safari Tours', href: '#safari' },
     { label: 'Golf Tours', href: '#golf' },
+    { label: 'Concierge', href: '#concierge' },
     { label: 'About', href: '#about' },
     { label: 'Contact', href: '#contact' }
   ];

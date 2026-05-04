@@ -1,7 +1,7 @@
 import { Client } from 'pg';
-import sgMail from '@sendgrid/mail';
-
-sgMail.setApiKey(process.env.SENDGRID_API_KEY || '');
+// Do not import SendGrid at module load time. We'll dynamically import it inside
+// the handler only when `SENDGRID_API_KEY` is configured to avoid runtime
+// failures when the package is not installed or the API key is not set.
 
 export async function handler(event) {
   try {
@@ -27,14 +27,27 @@ export async function handler(event) {
 
     // send notification to site owner via SendGrid if configured
     if (process.env.SENDGRID_API_KEY) {
-      const to = process.env.NOTIFY_EMAIL || 'info@reenette.com';
-      const from = process.env.FROM_EMAIL || 'no-reply@reenette.com';
-      const subject = `New newsletter subscription: ${email}`;
-      const html = `<p>New subscriber: <strong>${email}</strong></p>`;
+      let sgMail = null;
       try {
-        await sgMail.send({ to, from, subject, html });
-      } catch (mailErr) {
-        console.error('SendGrid error (newsletter):', mailErr);
+        sgMail = (await import('@sendgrid/mail')).default;
+        sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+      } catch (importErr) {
+        console.error('SendGrid module not available or failed to load:', importErr);
+        sgMail = null;
+      }
+
+      if (sgMail) {
+        const to = process.env.NOTIFY_EMAIL || 'info@reenette.com';
+        const from = process.env.FROM_EMAIL || 'no-reply@reenette.com';
+        const subject = `New newsletter subscription: ${email}`;
+        const html = `<p>New subscriber: <strong>${email}</strong></p>`;
+        try {
+          await sgMail.send({ to, from, subject, html });
+        } catch (mailErr) {
+          console.error('SendGrid error (newsletter):', mailErr);
+        }
+      } else {
+        console.warn('SENDGRID_API_KEY is set but @sendgrid/mail could not be loaded; skipping email send.');
       }
     }
 
