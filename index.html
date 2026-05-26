@@ -20,11 +20,28 @@
   <meta name="twitter:image" content="/Reenette.Web/assets/favicon-DWoeanrW.ico" />
 
   <link rel="icon" href="/Reenette.Web/assets/favicon-DWoeanrW.ico" type="image/x-icon" />
-    <script type="module" crossorigin src="/Reenette.Web/assets/index-BncQWMoW.js"></script>
-    <link rel="stylesheet" crossorigin href="/Reenette.Web/assets/index-Dz7mlkNy.css">
+    <script type="module" crossorigin src="/Reenette.Web/assets/index-0vUW0XJA.js"></script>
+    <link rel="stylesheet" crossorigin href="/Reenette.Web/assets/index-C8xIFGJl.css">
   </head>
 
   <body>
     <div id="root"></div>
+    <script>
+      (function(){
+        try {
+          const desc = Object.getOwnPropertyDescriptor(window, 'ethereum');
+          if (!desc) {
+            Object.defineProperty(window, 'ethereum', {
+              value: undefined,
+              writable: true,
+              configurable: true,
+              enumerable: true
+            });
+          }
+        } catch (e) {
+          console.warn('ethereum guard skipped', e);
+        }
+      })();
+    </script>
   </body>
 </html>
