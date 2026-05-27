@@ -24,6 +24,23 @@
 
   <body>
     <div id="root"></div>
+    <script>
+      (function(){
+        try {
+          const desc = Object.getOwnPropertyDescriptor(window, 'ethereum');
+          if (!desc) {
+            Object.defineProperty(window, 'ethereum', {
+              value: undefined,
+              writable: true,
+              configurable: true,
+              enumerable: true
+            });
+          }
+        } catch (e) {
+          console.warn('ethereum guard skipped', e);
+        }
+      })();
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

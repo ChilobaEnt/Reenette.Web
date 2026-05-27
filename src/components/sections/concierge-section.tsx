@@ -1,6 +1,9 @@
 import { Star, Truck, Plane } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
 
 export function ConciergeSection() {
+  const navigate = useNavigate();
   return (
     <section id="concierge" className="py-20 bg-gradient-to-br from-muted/10 to-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,8 +58,23 @@ export function ConciergeSection() {
         </div>
 
         <div className="mt-10 max-w-3xl mx-auto text-center">
-          <p className="text-muted-foreground mb-4">Our concierge team operates 24/7 and works closely with premium partners to ensure every detail is covered — from corporate travel logistics to creating unforgettable leisure experiences.</p>
-          <a href="#contact" className="inline-block bg-accent text-accent-foreground px-6 py-3 rounded shadow hover:shadow-glow transition">Request Concierge Assistance</a>
+          <p className="text-muted-foreground mb-6">Our concierge team operates 24/7 and works closely with premium partners to ensure every detail is covered from corporate travel logistics to creating unforgettable leisure experiences.</p>
+          <div className="flex gap-4 justify-center flex-wrap">
+            <Button 
+              onClick={() => navigate('/concierge')}
+              className="bg-accent text-accent-foreground hover:bg-accent/90"
+              size="lg"
+            >
+              Click here to view more
+            </Button>
+            <Button 
+              onClick={() => window.location.href = '#contact'}
+              variant="outline"
+              size="lg"
+            >
+              Request Concierge Assistance
+            </Button>
+          </div>
         </div>
       </div>
     </section>

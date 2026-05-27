@@ -1,0 +1,67 @@
+functionsDirectory = "/Users/macbookpro/Desktop/Reenette.Web/netlify/functions"
+functionsDirectoryOrigin = "config-v1"
+redirectsOrigin = "config"
+plugins = []
+headers = []
+
+[build]
+publish = "/Users/macbookpro/Desktop/Reenette.Web/dist"
+publishOrigin = "config"
+commandOrigin = "config"
+command = "npm run build"
+functions = "/Users/macbookpro/Desktop/Reenette.Web/netlify/functions"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
+
+[dev]
+command = "npm run dev"
+port = 3000.0
+publish = "dist"
+
+[forms]
+
+[forms.tour-booking]
+name = "Tour Booking Request"
+
+[forms.tour-booking.fields]
+name = "Full Name"
+email = "Email Address"
+preferred-date = "Preferred Date"
+participants = "Number of Participants"
+special-requests = "Special Requests (Optional)"
+tour-name = "Tour Name"
+tour-id = "Tour ID"
+
+[[forms.tour-booking.notifications]]
+to = "info@reenette.com"
+from = "noreply@reenette.tours"
+subject = "New Tour Booking Request: {form[tour-name]}"
+template = "    New booking request received!\n\n    Tour: {form[tour-name]}\n    Customer: {form[name]}\n    Email: {form[email]}\n    Date: {form[preferred-date]}\n    Participants: {form[participants]}\n\n    Special Requests:\n    {form[special-requests]}\n\n    View all details in your Netlify dashboard:\n    {admin_url}/forms\n  "
+
+[functions]
+
+[functions."*"]
+
+[[redirects]]
+from = "/*"
+to = "/index.html"
+status = 200.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
