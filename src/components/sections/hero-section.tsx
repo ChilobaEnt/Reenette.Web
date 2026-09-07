@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { ChevronLeft, ChevronRight, MapPin } from 'lucide-react';
 import heroMountain from '@/assets/hero-mountain.jpg';
-import kenyaSafari from '@/assets/kenya-safari.jpg';
+import kenyaSafari from '@/assets/maasai_mara_kenya_02.webp';
 import kenyaGolf from '@/assets/kenya-golf.jpg';
 import amboseliLake from '@/assets/amboseli-lake.jpg';
 
