@@ -8,7 +8,7 @@ import { ErrorBoundary } from '@/components/ui/error-boundary';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { BookingForm } from './booking-form';
 import kenyaSafari from '@/assets/kenya-safari.jpg';
-import safariExperience from '@/assets/safari-experience.jpg';
+import amboseliElephant from '@/assets/amboseli-elephant.jpg';
 import heroMountain from '@/assets/hero-mountain.jpg';
 import type { Tour } from '@/types';
 
@@ -29,7 +29,7 @@ const safariTours: Tour[] = [
     id: 2,
     title: 'Amboseli Elephant Safari',
     location: 'Amboseli National Park',
-    image_url: safariExperience,
+    image_url: amboseliElephant,
     rating: 4.7,
     duration: '4 days',
     description: 'Experience close encounters with elephants against the backdrop of Mount Kilimanjaro.',

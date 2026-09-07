@@ -1,38 +1,55 @@
 import { Navigation } from '@/components/ui/navigation';
 import { Footer } from '@/components/sections/footer';
-import { Star, Truck, Plane, MapPin, Utensils, Music, Zap } from 'lucide-react';
+import { Star, Truck, Plane, MapPin, Utensils, Music, Zap, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useState } from 'react';
 
 const ConciergePage = () => {
+  const [imageIndexes, setImageIndexes] = useState<Record<number, number>>({ 1: 0 });
+
   const vehicles = [
     {
       id: 1,
       name: 'Mercedes-Benz S-Class',
       category: 'Luxury Sedan',
-      image: '/api/placeholder/400/300',
+      images: ['/mercedes-sedan-1.jpg', '/mercedes-sedan-2.jpg'],
       description: 'Premium executive sedan perfect for business meetings, airport transfers, and city tours. Leather interior, climate control, premium sound system.',
       capacity: '4 Passengers',
       features: ['Wi-Fi Hotspot', 'Premium Sound', 'Leather Seats', 'Climate Control']
     },
     {
       id: 2,
-      name: 'Land Cruiser Prado',
+      name: 'BMW X3 M',
       category: 'Luxury SUV',
-      image: '/api/placeholder/400/300',
-      description: 'Rugged elegance for safari adventures and rough terrain. Spacious interior with superior comfort for multi-day journeys through Kenya\'s landscapes.',
-      capacity: '7 Passengers',
-      features: ['All-Terrain', 'Comfortable', 'Safari-Ready', 'Large Luggage']
+      images: ['/bmw-x3-m.jpg'],
+      description: 'Dynamic performance meets luxury. Premium sport SUV perfect for those who demand both power and elegance. Advanced technology and superior handling for every journey.',
+      capacity: '5 Passengers',
+      features: ['Performance SUV', 'Advanced Tech', 'Premium Comfort', 'All-Terrain']
     },
     {
       id: 3,
-      name: 'Mercedes-Benz Sprinter',
-      category: 'Executive Coach',
-      image: '/api/placeholder/400/300',
-      description: 'Perfect for group transfers, corporate events, and large parties. Premium interior with individual seating and entertainment systems.',
-      capacity: '12-14 Passengers',
-      features: ['Group Transport', 'Individual Seating', 'Entertainment', 'Professional Drivers']
+      name: 'Land Cruiser Prado',
+      category: 'Luxury SUV',
+      images: ['/land-cruiser-prado.jpg'],
+      description: 'Rugged elegance for safari adventures and rough terrain. Spacious interior with superior comfort for multi-day journeys through Kenya\'s landscapes.',
+      capacity: '7 Passengers',
+      features: ['All-Terrain', 'Comfortable', 'Safari-Ready', 'Large Luggage']
     }
   ];
+
+  const handleNextImage = (vehicleId: number, totalImages: number) => {
+    setImageIndexes(prev => ({
+      ...prev,
+      [vehicleId]: ((prev[vehicleId] ?? 0) + 1) % totalImages
+    }));
+  };
+
+  const handlePrevImage = (vehicleId: number, totalImages: number) => {
+    setImageIndexes(prev => ({
+      ...prev,
+      [vehicleId]: prev[vehicleId] === 0 ? totalImages - 1 : (prev[vehicleId] ?? 0) - 1
+    }));
+  };
 
   const lifestyleActivities = [
     {
@@ -209,12 +226,36 @@ const ConciergePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {vehicles.map((vehicle) => (
               <div key={vehicle.id} className="group bg-card/60 rounded-xl overflow-hidden shadow-soft hover:shadow-adventure transition-all duration-300 border border-border/50">
-                <div className="h-48 bg-gradient-to-br from-muted/40 to-muted/20 flex items-center justify-center overflow-hidden">
+                <div className="h-48 bg-gradient-to-br from-muted/40 to-muted/20 flex items-center justify-center overflow-hidden relative">
                   <img 
-                    src={vehicle.image} 
-                    alt={vehicle.name}
+                    src={vehicle.images[imageIndexes[vehicle.id] ?? 0]} 
+                    alt={`${vehicle.name} ${(imageIndexes[vehicle.id] ?? 0) + 1}`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                   />
+                  <button
+                    onClick={() => handlePrevImage(vehicle.id, vehicle.images.length)}
+                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft className="h-4 w-4" />
+                  </button>
+                  <button
+                    onClick={() => handleNextImage(vehicle.id, vehicle.images.length)}
+                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="h-4 w-4" />
+                  </button>
+                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
+                    {vehicle.images.map((_, idx) => (
+                      <div
+                        key={idx}
+                        className={`h-1.5 rounded-full transition-all ${
+                          idx === (imageIndexes[vehicle.id] ?? 0) ? 'bg-white w-4' : 'bg-white/50 w-1.5'
+                        }`}
+                      />
+                    ))}
+                  </div>
                 </div>
                 <div className="p-6">
                   <p className="text-sm text-accent font-semibold mb-2">{vehicle.category}</p>
@@ -316,7 +357,7 @@ const ConciergePage = () => {
           <Button 
             size="lg"
             className="bg-black text-white hover:bg-black/90"
-            onClick={() => window.location.href = '#contact'}
+            onClick={() => window.location.href = '/#contact'}
           >
             Request Concierge Assistance
           </Button>
