@@ -1,7 +1,9 @@
 import { Star, Truck, Plane } from 'lucide-react';
-import vehicle1 from '@/assets/vehicles/vehicle1.jpg';
-import vehicle2 from '@/assets/vehicles/vehicle2.jpg';
-import vehicle3 from '@/assets/vehicles/vehicle3.jpg';
+import merc1 from '@/assets/vehicles/merc_concierge1.jpg';
+import merc2 from '@/assets/vehicles/merc_concierge2.jpg';
+import bmw from '@/assets/vehicles/bmw_concierge.jpg';
+import prado1 from '@/assets/vehicles/prado_concierge1.jpg';
+import prado2 from '@/assets/vehicles/prado_concierge2.jpg';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
@@ -86,16 +88,24 @@ export function ConciergeSection() {
           <p className="text-sm text-muted-foreground mb-6 text-center">Executive sedans, luxury SUVs and minibuses — all vetted and chauffeur‑driven.</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div className="rounded-lg overflow-hidden shadow-soft">
-              <img src={vehicle1} alt="Executive Sedan" className="w-full h-40 object-cover" />
-              <div className="p-3 text-center text-sm font-medium">Executive Sedan</div>
+              <img src={merc1} alt="Mercedes - Front" className="w-full h-40 object-cover" />
+              <div className="p-3 text-center text-sm font-medium">Mercedes — Front View</div>
             </div>
             <div className="rounded-lg overflow-hidden shadow-soft">
-              <img src={vehicle2} alt="Luxury SUV" className="w-full h-40 object-cover" />
-              <div className="p-3 text-center text-sm font-medium">Luxury SUV</div>
+              <img src={merc2} alt="Mercedes - Interior" className="w-full h-40 object-cover" />
+              <div className="p-3 text-center text-sm font-medium">Mercedes — Interior</div>
             </div>
             <div className="rounded-lg overflow-hidden shadow-soft">
-              <img src={vehicle3} alt="Minibus" className="w-full h-40 object-cover" />
-              <div className="p-3 text-center text-sm font-medium">Minibus</div>
+              <img src={bmw} alt="BMW Executive" className="w-full h-40 object-cover" />
+              <div className="p-3 text-center text-sm font-medium">BMW Executive</div>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-soft">
+              <img src={prado1} alt="Prado - Side" className="w-full h-40 object-cover" />
+              <div className="p-3 text-center text-sm font-medium">Prado — Side View</div>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-soft">
+              <img src={prado2} alt="Prado - Rear" className="w-full h-40 object-cover" />
+              <div className="p-3 text-center text-sm font-medium">Prado — Rear View</div>
             </div>
           </div>
         </div>
