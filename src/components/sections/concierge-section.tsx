@@ -1,9 +1,4 @@
 import { Star, Truck, Plane } from 'lucide-react';
-import merc1 from '@/assets/vehicles/merc_concierge1.jpg';
-import merc2 from '@/assets/vehicles/merc_concierge2.jpg';
-import bmw from '@/assets/vehicles/bmw_concierge.jpg';
-import prado1 from '@/assets/vehicles/prado_concierge1.jpg';
-import prado2 from '@/assets/vehicles/prado_concierge2.jpg';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
@@ -79,34 +74,6 @@ export function ConciergeSection() {
             >
               Request Concierge Assistance
             </Button>
-          </div>
-        </div>
-
-        {/* Premium Fleet Gallery */}
-        <div className="mt-14 max-w-4xl mx-auto">
-          <h3 className="text-2xl font-semibold mb-4 text-center">Our Premium Fleet</h3>
-          <p className="text-sm text-muted-foreground mb-6 text-center">Executive sedans, luxury SUVs and minibuses — all vetted and chauffeur‑driven.</p>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            <div className="rounded-lg overflow-hidden shadow-soft">
-              <img src={merc1} alt="Mercedes - Front" className="w-full h-40 object-cover" />
-              <div className="p-3 text-center text-sm font-medium">Mercedes — Front View</div>
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-soft">
-              <img src={merc2} alt="Mercedes - Interior" className="w-full h-40 object-cover" />
-              <div className="p-3 text-center text-sm font-medium">Mercedes — Interior</div>
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-soft">
-              <img src={bmw} alt="BMW Executive" className="w-full h-40 object-cover" />
-              <div className="p-3 text-center text-sm font-medium">BMW Executive</div>
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-soft">
-              <img src={prado1} alt="Prado - Side" className="w-full h-40 object-cover" />
-              <div className="p-3 text-center text-sm font-medium">Prado — Side View</div>
-            </div>
-            <div className="rounded-lg overflow-hidden shadow-soft">
-              <img src={prado2} alt="Prado - Rear" className="w-full h-40 object-cover" />
-              <div className="p-3 text-center text-sm font-medium">Prado — Rear View</div>
-            </div>
           </div>
         </div>
       </div>
