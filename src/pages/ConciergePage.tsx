@@ -21,6 +21,9 @@ import spaWellness from '@/assets/Lifestyle/luxury_spa_01.jpg';
 import nightlife01 from '@/assets/Lifestyle/NightLife_01.jpg';
 import shopping01 from '@/assets/Lifestyle/Shopping_01.jpg';
 import shopping02 from '@/assets/Lifestyle/Shopping_02.jpg';
+import maasaiMara from '@/assets/T3P-destinations/maasai_mara_01.jpg';
+import amboseliPark from '@/assets/T3P-destinations/Amboseli_Park.jpg';
+import dianiRetreat from '@/assets/T3P-destinations/Diani_Retreat_01.jpeg';
 
 const ConciergePage = () => {
   const [imageIndexes, setImageIndexes] = useState<Record<number, number>>({ 1: 0 });
@@ -146,8 +149,8 @@ const ConciergePage = () => {
       title: 'Maasai Mara National Reserve',
       description: 'Witness the Great Migration. One of the world\'s most spectacular wildlife experiences with endless plains and diverse fauna.',
       icon: '🌾',
-      image: nairobiPark01,
-      images: [nairobiPark01],
+      image: maasaiMara,
+      images: [maasaiMara],
       highlights: ['Migration', 'Photography', 'Adventure']
     },
     {
@@ -156,8 +159,8 @@ const ConciergePage = () => {
       title: 'Amboseli National Park',
       description: 'Perfect elephant viewing with Mount Kilimanjaro as backdrop. Excellent for photography and wildlife observation.',
       icon: '📸',
-      image: nairobiPark01,
-      images: [nairobiPark01],
+      image: amboseliPark,
+      images: [amboseliPark],
       highlights: ['Elephants', 'Kilimanjaro', 'Photography']
     },
     {
@@ -166,8 +169,8 @@ const ConciergePage = () => {
       title: 'Diani Beach Retreat',
       description: 'Pristine white-sand beaches along the Indian Ocean. Perfect for relaxation, water sports, and island excursions.',
       icon: '🏖️',
-      image: nairobiPark01,
-      images: [nairobiPark01],
+      image: dianiRetreat,
+      images: [dianiRetreat],
       highlights: ['Beach', 'Relaxation', 'Water Sports']
     }
   ];
