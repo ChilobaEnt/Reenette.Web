@@ -3,6 +3,11 @@ import { Footer } from '@/components/sections/footer';
 import { Star, Truck, Plane, MapPin, Utensils, Music, Zap, ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useState } from 'react';
+import merc1 from '@/assets/vehicles/merc_concierge1.jpg';
+import merc2 from '@/assets/vehicles/merc_concierge2.jpg';
+import bmw from '@/assets/vehicles/bmw_concierge.jpg';
+import prado1 from '@/assets/vehicles/prado_concierge1.jpg';
+import prado2 from '@/assets/vehicles/prado_concierge2.jpg';
 
 const ConciergePage = () => {
   const [imageIndexes, setImageIndexes] = useState<Record<number, number>>({ 1: 0 });
@@ -12,7 +17,7 @@ const ConciergePage = () => {
       id: 1,
       name: 'Mercedes-Benz S-Class',
       category: 'Luxury Sedan',
-      images: ['/mercedes-sedan-1.jpg', '/mercedes-sedan-2.jpg'],
+      images: [merc1, merc2],
       description: 'Premium executive sedan perfect for business meetings, airport transfers, and city tours. Leather interior, climate control, premium sound system.',
       capacity: '4 Passengers',
       features: ['Wi-Fi Hotspot', 'Premium Sound', 'Leather Seats', 'Climate Control']
@@ -21,7 +26,7 @@ const ConciergePage = () => {
       id: 2,
       name: 'BMW X3 M',
       category: 'Luxury SUV',
-      images: ['/bmw-x3-m.jpg'],
+      images: [bmw],
       description: 'Dynamic performance meets luxury. Premium sport SUV perfect for those who demand both power and elegance. Advanced technology and superior handling for every journey.',
       capacity: '5 Passengers',
       features: ['Performance SUV', 'Advanced Tech', 'Premium Comfort', 'All-Terrain']
@@ -30,7 +35,7 @@ const ConciergePage = () => {
       id: 3,
       name: 'Land Cruiser Prado',
       category: 'Luxury SUV',
-      images: ['/land-cruiser-prado.jpg'],
+      images: [prado1, prado2],
       description: 'Rugged elegance for safari adventures and rough terrain. Spacious interior with superior comfort for multi-day journeys through Kenya\'s landscapes.',
       capacity: '7 Passengers',
       features: ['All-Terrain', 'Comfortable', 'Safari-Ready', 'Large Luggage']
@@ -226,32 +231,33 @@ const ConciergePage = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {vehicles.map((vehicle) => (
               <div key={vehicle.id} className="group bg-card/60 rounded-xl overflow-hidden shadow-soft hover:shadow-adventure transition-all duration-300 border border-border/50">
-                <div className="h-48 bg-gradient-to-br from-muted/40 to-muted/20 flex items-center justify-center overflow-hidden relative">
+                <div className="h-72 md:h-80 relative overflow-hidden bg-[#0b0b0d]">
                   <img 
                     src={vehicle.images[imageIndexes[vehicle.id] ?? 0]} 
                     alt={`${vehicle.name} ${(imageIndexes[vehicle.id] ?? 0) + 1}`}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 brightness-[0.88] saturate-110 contrast-110"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
                   <button
                     onClick={() => handlePrevImage(vehicle.id, vehicle.images.length)}
-                    className="absolute left-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all"
+                    className="absolute left-3 top-1/2 -translate-y-1/2 bg-black/55 hover:bg-black/75 text-white p-2.5 rounded-full transition-all shadow-lg"
                     aria-label="Previous image"
                   >
                     <ChevronLeft className="h-4 w-4" />
                   </button>
                   <button
                     onClick={() => handleNextImage(vehicle.id, vehicle.images.length)}
-                    className="absolute right-2 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-2 rounded-full transition-all"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 bg-black/55 hover:bg-black/75 text-white p-2.5 rounded-full transition-all shadow-lg"
                     aria-label="Next image"
                   >
                     <ChevronRight className="h-4 w-4" />
                   </button>
-                  <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex gap-2">
+                  <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
                     {vehicle.images.map((_, idx) => (
                       <div
                         key={idx}
                         className={`h-1.5 rounded-full transition-all ${
-                          idx === (imageIndexes[vehicle.id] ?? 0) ? 'bg-white w-4' : 'bg-white/50 w-1.5'
+                          idx === (imageIndexes[vehicle.id] ?? 0) ? 'bg-white w-5' : 'bg-white/50 w-2'
                         }`}
                       />
                     ))}
