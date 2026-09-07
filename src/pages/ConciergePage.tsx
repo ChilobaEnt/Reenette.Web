@@ -8,6 +8,19 @@ import merc2 from '@/assets/vehicles/merc_concierge2.jpg';
 import bmw from '@/assets/vehicles/bmw_concierge.jpg';
 import prado1 from '@/assets/vehicles/prado_concierge1.jpg';
 import prado2 from '@/assets/vehicles/prado_concierge2.jpg';
+import nairobiPark01 from '@/assets/Lifestyle/nairobi_national_park_01.jpg';
+import nairobiPark02 from '@/assets/Lifestyle/Nairobi_national_park_02.avif';
+import karenBlixen01 from '@/assets/Lifestyle/Karen_Blixen_01.jpg';
+import karenBlixen02 from '@/assets/Lifestyle/Karen_Blixen_02.avif';
+import giraffeCentre from '@/assets/Lifestyle/Giraffe_Centre_02.jpeg';
+import michelinDining1 from '@/assets/Lifestyle/Michelin_Dining_1.jpeg';
+import michelinDining3 from '@/assets/Lifestyle/Michelin_Dining_03.jpg';
+import davidSheldrick01 from '@/assets/Lifestyle/David Sheldrick_01.jpeg';
+import davidSheldrick02 from '@/assets/Lifestyle/David-Sheldrick-Wildlife-Trust_02.jpg';
+import spaWellness from '@/assets/Lifestyle/luxury_spa_01.jpg';
+import nightlife01 from '@/assets/Lifestyle/NightLife_01.jpg';
+import shopping01 from '@/assets/Lifestyle/Shopping_01.jpg';
+import shopping02 from '@/assets/Lifestyle/Shopping_02.jpg';
 
 const ConciergePage = () => {
   const [imageIndexes, setImageIndexes] = useState<Record<number, number>>({ 1: 0 });
@@ -63,6 +76,8 @@ const ConciergePage = () => {
       title: 'Nairobi National Park Safari',
       description: 'Experience wildlife within the city limits. Spot lions, giraffes, and buffalo with the Nairobi skyline as backdrop.',
       icon: '🦁',
+      image: nairobiPark01,
+      images: [nairobiPark01, nairobiPark02],
       highlights: ['Big Five', 'Photography', 'Picnic']
     },
     {
@@ -71,6 +86,8 @@ const ConciergePage = () => {
       title: 'Karen Blixen Museum',
       description: 'Step into colonial history at the author\'s former residence. Explore the stories behind "Out of Africa" in an elegant setting.',
       icon: '📚',
+      image: karenBlixen01,
+      images: [karenBlixen01, karenBlixen02],
       highlights: ['History', 'Architecture', 'Coffee']
     },
     {
@@ -79,6 +96,8 @@ const ConciergePage = () => {
       title: 'Giraffe Centre',
       description: 'Hand-feed endangered Rothschild giraffes. A unique interactive experience supporting wildlife conservation efforts.',
       icon: '🦒',
+      image: giraffeCentre,
+      images: [giraffeCentre],
       highlights: ['Conservation', 'Interactive', 'Family-Friendly']
     },
     {
@@ -87,6 +106,8 @@ const ConciergePage = () => {
       title: 'Nairobi Dining Scene',
       description: 'From Michelin-worthy restaurants to authentic local cuisine. Discover culinary excellence across diverse cuisines.',
       icon: '🍽️',
+      image: michelinDining1,
+      images: [michelinDining1, michelinDining3],
       highlights: ['Fine Dining', 'Local Cuisine', 'Wine Bars']
     },
     {
@@ -95,6 +116,8 @@ const ConciergePage = () => {
       title: 'David Sheldrick Wildlife Trust',
       description: 'Meet rescued baby elephants. A heartwarming experience supporting wildlife rehabilitation and conservation.',
       icon: '🐘',
+      image: davidSheldrick01,
+      images: [davidSheldrick01, davidSheldrick02],
       highlights: ['Wildlife', 'Rescue', 'Conservation']
     },
     {
@@ -103,6 +126,8 @@ const ConciergePage = () => {
       title: 'Luxury Spa & Wellness',
       description: 'Rejuvenate with world-class spa treatments using traditional African healing methods and modern techniques.',
       icon: '💆',
+      image: spaWellness,
+      images: [spaWellness],
       highlights: ['Spa', 'Wellness', 'Relaxation']
     },
     {
@@ -111,6 +136,8 @@ const ConciergePage = () => {
       title: 'Nairobi Shopping & Nightlife',
       description: 'Premium shopping at Westgate Mall or Village Market, followed by vibrant nightlife at exclusive clubs and lounges.',
       icon: '🛍️',
+      image: nightlife01,
+      images: [nightlife01, shopping01, shopping02],
       highlights: ['Shopping', 'Entertainment', 'Nightlife']
     },
     {
@@ -119,6 +146,8 @@ const ConciergePage = () => {
       title: 'Maasai Mara National Reserve',
       description: 'Witness the Great Migration. One of the world\'s most spectacular wildlife experiences with endless plains and diverse fauna.',
       icon: '🌾',
+      image: nairobiPark01,
+      images: [nairobiPark01],
       highlights: ['Migration', 'Photography', 'Adventure']
     },
     {
@@ -127,6 +156,8 @@ const ConciergePage = () => {
       title: 'Amboseli National Park',
       description: 'Perfect elephant viewing with Mount Kilimanjaro as backdrop. Excellent for photography and wildlife observation.',
       icon: '📸',
+      image: nairobiPark01,
+      images: [nairobiPark01],
       highlights: ['Elephants', 'Kilimanjaro', 'Photography']
     },
     {
@@ -135,6 +166,8 @@ const ConciergePage = () => {
       title: 'Diani Beach Retreat',
       description: 'Pristine white-sand beaches along the Indian Ocean. Perfect for relaxation, water sports, and island excursions.',
       icon: '🏖️',
+      image: nairobiPark01,
+      images: [nairobiPark01],
       highlights: ['Beach', 'Relaxation', 'Water Sports']
     }
   ];
@@ -303,9 +336,15 @@ const ConciergePage = () => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {nairobi.map((activity) => (
-                <div key={activity.id} className="group bg-card/60 rounded-lg overflow-hidden shadow-soft hover:shadow-adventure transition-all duration-300 border border-border/50 hover:-translate-y-1">
-                  <div className="h-40 bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center text-4xl group-hover:scale-110 transition-transform duration-300">
-                    {activity.icon}
+                <div key={activity.id} className="group bg-card/60 rounded-xl overflow-hidden shadow-soft hover:shadow-adventure transition-all duration-300 border border-border/50 hover:-translate-y-1">
+                  <div className="relative h-56 overflow-hidden bg-muted/20">
+                    <img
+                      src={activity.image}
+                      alt={activity.title}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                    <div className="absolute bottom-3 left-3 text-3xl drop-shadow-md">{activity.icon}</div>
                   </div>
                   <div className="p-5">
                     <h4 className="font-bold text-lg mb-2">{activity.title}</h4>
@@ -331,9 +370,15 @@ const ConciergePage = () => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {kenya.map((activity) => (
-                <div key={activity.id} className="group bg-gradient-to-br from-card/80 to-card/40 rounded-lg overflow-hidden shadow-soft hover:shadow-adventure transition-all duration-300 border border-border/50 hover:-translate-y-1">
-                  <div className="h-48 bg-gradient-to-br from-accent/20 to-accent/5 flex items-center justify-center text-6xl group-hover:scale-110 transition-transform duration-300">
-                    {activity.icon}
+                <div key={activity.id} className="group bg-gradient-to-br from-card/80 to-card/40 rounded-xl overflow-hidden shadow-soft hover:shadow-adventure transition-all duration-300 border border-border/50 hover:-translate-y-1">
+                  <div className="relative h-52 overflow-hidden bg-muted/20">
+                    <img
+                      src={activity.image}
+                      alt={activity.title}
+                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+                    <div className="absolute bottom-3 left-3 text-5xl drop-shadow-md">{activity.icon}</div>
                   </div>
                   <div className="p-6">
                     <h4 className="font-bold text-xl mb-3">{activity.title}</h4>
