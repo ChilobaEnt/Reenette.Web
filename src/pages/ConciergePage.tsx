@@ -336,22 +336,24 @@ const ConciergePage = () => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {nairobi.map((activity) => (
-                <div key={activity.id} className="group bg-card/60 rounded-xl overflow-hidden shadow-soft hover:shadow-adventure transition-all duration-300 border border-border/50 hover:-translate-y-1">
-                  <div className="relative h-56 overflow-hidden bg-muted/20">
+                <div key={activity.id} className="group overflow-hidden rounded-[28px] border border-border/60 bg-card/70 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-adventure">
+                  <div className="relative h-72 overflow-hidden bg-muted/20">
                     <img
                       src={activity.image}
                       alt={activity.title}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                    <div className="absolute bottom-3 left-3 text-3xl drop-shadow-md">{activity.icon}</div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-transparent" />
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <div className="text-3xl drop-shadow-md">{activity.icon}</div>
+                    </div>
                   </div>
                   <div className="p-5">
-                    <h4 className="font-bold text-lg mb-2">{activity.title}</h4>
-                    <p className="text-sm text-muted-foreground mb-4">{activity.description}</p>
-                    <div className="flex flex-wrap gap-1">
+                    <h4 className="font-bold text-lg mb-2 text-foreground">{activity.title}</h4>
+                    <p className="text-sm text-muted-foreground mb-4 leading-relaxed">{activity.description}</p>
+                    <div className="flex flex-wrap gap-1.5">
                       {activity.highlights.map((highlight, idx) => (
-                        <span key={idx} className="text-xs bg-accent/10 text-accent px-2 py-1 rounded">
+                        <span key={idx} className="text-[10px] font-medium uppercase tracking-[0.08em] bg-accent/10 text-accent px-2 py-1 rounded-full">
                           {highlight}
                         </span>
                       ))}
@@ -370,22 +372,22 @@ const ConciergePage = () => {
             </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {kenya.map((activity) => (
-                <div key={activity.id} className="group bg-gradient-to-br from-card/80 to-card/40 rounded-xl overflow-hidden shadow-soft hover:shadow-adventure transition-all duration-300 border border-border/50 hover:-translate-y-1">
-                  <div className="relative h-52 overflow-hidden bg-muted/20">
+                <div key={activity.id} className="group overflow-hidden rounded-[28px] border border-border/60 bg-gradient-to-br from-card/80 to-card/40 shadow-soft transition-all duration-300 hover:-translate-y-1 hover:shadow-adventure">
+                  <div className="relative h-64 overflow-hidden bg-muted/20">
                     <img
                       src={activity.image}
                       alt={activity.title}
-                      className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                    <div className="absolute bottom-3 left-3 text-5xl drop-shadow-md">{activity.icon}</div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/15 to-transparent" />
+                    <div className="absolute bottom-4 left-4 text-5xl drop-shadow-md">{activity.icon}</div>
                   </div>
                   <div className="p-6">
-                    <h4 className="font-bold text-xl mb-3">{activity.title}</h4>
-                    <p className="text-muted-foreground mb-5">{activity.description}</p>
+                    <h4 className="font-bold text-xl mb-3 text-foreground">{activity.title}</h4>
+                    <p className="text-muted-foreground mb-5 leading-relaxed">{activity.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {activity.highlights.map((highlight, idx) => (
-                        <span key={idx} className="text-sm bg-accent/10 text-accent px-3 py-1 rounded">
+                        <span key={idx} className="text-xs bg-accent/10 text-accent px-3 py-1.5 rounded-full">
                           {highlight}
                         </span>
                       ))}
