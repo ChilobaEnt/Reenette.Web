@@ -1,4 +1,7 @@
 import { Star, Truck, Plane } from 'lucide-react';
+import vehicle1 from '@/assets/vehicles/vehicle1.jpg';
+import vehicle2 from '@/assets/vehicles/vehicle2.jpg';
+import vehicle3 from '@/assets/vehicles/vehicle3.jpg';
 import { useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 
@@ -74,6 +77,26 @@ export function ConciergeSection() {
             >
               Request Concierge Assistance
             </Button>
+          </div>
+        </div>
+
+        {/* Premium Fleet Gallery */}
+        <div className="mt-14 max-w-4xl mx-auto">
+          <h3 className="text-2xl font-semibold mb-4 text-center">Our Premium Fleet</h3>
+          <p className="text-sm text-muted-foreground mb-6 text-center">Executive sedans, luxury SUVs and minibuses — all vetted and chauffeur‑driven.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="rounded-lg overflow-hidden shadow-soft">
+              <img src={vehicle1} alt="Executive Sedan" className="w-full h-40 object-cover" />
+              <div className="p-3 text-center text-sm font-medium">Executive Sedan</div>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-soft">
+              <img src={vehicle2} alt="Luxury SUV" className="w-full h-40 object-cover" />
+              <div className="p-3 text-center text-sm font-medium">Luxury SUV</div>
+            </div>
+            <div className="rounded-lg overflow-hidden shadow-soft">
+              <img src={vehicle3} alt="Minibus" className="w-full h-40 object-cover" />
+              <div className="p-3 text-center text-sm font-medium">Minibus</div>
+            </div>
           </div>
         </div>
       </div>
