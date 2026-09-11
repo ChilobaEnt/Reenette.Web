@@ -12,6 +12,7 @@ import { BookingForm } from './booking-form';
 import kenyaGolf from '@/assets/kenya-golf.jpg';
 import beachParadise from '@/assets/beach-paradise.jpg';
 import templeHeritage from '@/assets/Muthaiga-Golf-Club.jpg';
+import karenCountryClub from '@/assets/Karen_Country_Club.jpg';
 import type { Tour } from '@/types';
 
 const golfTours: Tour[] = [
@@ -19,7 +20,7 @@ const golfTours: Tour[] = [
     id: 1,
     title: 'Karen Country Club Experience',
     location: 'Karen, Nairobi',
-    image_url: kenyaGolf,
+    image_url: karenCountryClub,
     rating: 4.8,
     duration: '3 days',
     description: 'Play at one of Kenya\'s most prestigious golf clubs with stunning views and championship course.',

@@ -21,15 +21,15 @@ const initialReviews: Review[] = [
     id: 1,
     author: "Sarah Johnson",
     rating: 5,
-    text: "Absolutely incredible experience! The guides were knowledgeable and the safari was breathtaking. Every moment was unforgettable.",
-    tour: "Maasai Mara Big Five Safari",
+    text: "The Karen Country Club round was exactly what we hoped for — beautifully maintained greens, a relaxed clubhouse atmosphere, and excellent pacing from the team. It felt premium from arrival to the final hole.",
+    tour: "Karen Country Club Experience",
     date: "Jan 15, 2026"
   },
   {
     id: 2,
-    author: "Michael Chen",
+    author: "Michael chen",
     rating: 5,
-    text: "Best golf experience of my life. The courses were pristine and the service was exceptional. Highly recommend!",
+    text: "Everything was well organized from the airport pickup to the golf day itself. The course was in great condition, the staff were welcoming, and the trip felt easy and genuinely enjoyable.",
     tour: "Premium Golf Tour Package",
     date: "Jan 12, 2026"
   },
@@ -37,24 +37,24 @@ const initialReviews: Review[] = [
     id: 3,
     author: "Emma Thompson",
     rating: 4.9,
-    text: "The Mount Kenya adventure was the highlight of our vacation. Professional guides, stunning views, and perfect organization.",
-    tour: "Mount Kenya Adventure",
+    text: "We booked a weekend golf break and it exceeded expectations. The views were stunning, the caddies were helpful, and the whole experience felt polished without being too formal.",
+    tour: "Kenya Golf Getaway",
     date: "Jan 10, 2026"
   },
   {
     id: 4,
-    author: "James Wilson",
+    author: "James Makali",
     rating: 5,
-    text: "Reenette Web's attention to detail is unmatched. From booking to the final day, everything was flawless.",
-    tour: "Amboseli Elephant Safari",
+    text: "My golf trip was smooth from start to finish. The course was challenging but fair, the hospitality was warm, and the lodge arrangements were comfortable and well planned.",
+    tour: "Safari & Golf Combo",
     date: "Jan 8, 2026"
   },
   {
     id: 5,
     author: "Lisa Rodriguez",
     rating: 4.8,
-    text: "An unforgettable journey through Kenya. The combination of adventure and relaxation was perfect for our family.",
-    tour: "Safari & Golf Combo",
+    text: "The experience was easy to plan and genuinely memorable. We loved the pace of the itinerary, the warm welcome at the club, and the quality of the course itself.",
+    tour: "Golf & Leisure Escape",
     date: "Jan 5, 2026"
   }
 ];
