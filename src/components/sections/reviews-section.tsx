@@ -23,7 +23,7 @@ const initialReviews: Review[] = [
     rating: 5,
     text: "The Karen Country Club round was exactly what we hoped for — beautifully maintained greens, a relaxed clubhouse atmosphere, and excellent pacing from the team. It felt premium from arrival to the final hole.",
     tour: "Karen Country Club Experience",
-    date: "Jan 15, 2026"
+    date: "Sep 18, 2026"
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const initialReviews: Review[] = [
     rating: 5,
     text: "Everything was well organized from the airport pickup to the golf day itself. The course was in great condition, the staff were welcoming, and the trip felt easy and genuinely enjoyable.",
     tour: "Premium Golf Tour Package",
-    date: "Jan 12, 2026"
+    date: "Aug 04, 2026"
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const initialReviews: Review[] = [
     rating: 4.9,
     text: "We booked a weekend golf break and it exceeded expectations. The views were stunning, the caddies were helpful, and the whole experience felt polished without being too formal.",
     tour: "Kenya Golf Getaway",
-    date: "Jan 10, 2026"
+    date: "Mar 27, 2026"
   },
   {
     id: 4,
@@ -47,7 +47,7 @@ const initialReviews: Review[] = [
     rating: 5,
     text: "My golf trip was smooth from start to finish. The course was challenging but fair, the hospitality was warm, and the lodge arrangements were comfortable and well planned.",
     tour: "Safari & Golf Combo",
-    date: "Jan 8, 2026"
+    date: "Nov 12, 2025"
   },
   {
     id: 5,
@@ -55,7 +55,7 @@ const initialReviews: Review[] = [
     rating: 4.8,
     text: "The experience was easy to plan and genuinely memorable. We loved the pace of the itinerary, the warm welcome at the club, and the quality of the course itself.",
     tour: "Golf & Leisure Escape",
-    date: "Jan 5, 2026"
+    date: "Jun 09, 2026"
   }
 ];
 
