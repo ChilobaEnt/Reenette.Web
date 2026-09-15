@@ -11,7 +11,7 @@ export function Navigation({ className }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
-    { label: 'Home', href: '#home' },
+    { label: 'Home', href: '/' },
     { label: 'Safari Tours', href: '#safari' },
     { label: 'Golf Tours', href: '#golf' },
     { label: 'Concierge', href: '#concierge' },
